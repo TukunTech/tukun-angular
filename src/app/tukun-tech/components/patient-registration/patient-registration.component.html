@@ -1,0 +1,100 @@
+<mat-toolbar>
+  <button mat-button routerLink="/registration">
+    <mat-icon>arrow_back</mat-icon> Return
+  </button>
+</mat-toolbar>
+
+<div class="registration-form-container">
+  <h1>Patient Registration</h1>
+  <div class="registration-form">
+    <form (ngSubmit)="addPatient()">
+      <!-- Name -->
+      <div class="form-row">
+        <label for="name">Name:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="name" [(ngModel)]="newPatient.name" name="name" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-row">
+        <label for="lastName">Last name:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="lastName" [(ngModel)]="newPatient.lastName" name="lastName" required />
+        </mat-form-field>
+      </div>
+
+      <!-- DNI -->
+      <div class="form-row">
+        <label for="dni">DNI:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="dni" [(ngModel)]="newPatient.dni" name="dni" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-row">
+        <label for="gender">Gender:</label>
+        <mat-form-field appearance="fill">
+          <mat-select id="gender" name="gender" required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Age -->
+      <div class="form-row">
+        <label for="age">Age:</label>
+        <mat-form-field appearance="fill">
+          <input matInput type="number" id="age" [(ngModel)]="newPatient.age" name="age" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Blood Type -->
+      <div class="form-row">
+        <label for="bloodType">Blood Type:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="bloodType" [(ngModel)]="newPatient.bloodType" name="bloodType" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Nationality -->
+      <div class="form-row">
+        <label for="nationality">Nationality:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="nationality" [(ngModel)]="newPatient.nationality" name="nationality" required />
+        </mat-form-field>
+      </div>
+
+      <!-- No. of Policies -->
+      <div class="form-row">
+        <label for="policies">No. of Policies:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="policies" type="number" [(ngModel)]="newPatient.noOfPolicies" name="policies" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Insurance -->
+      <div class="form-row">
+        <label for="insurance">Insurance:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="insurance" [(ngModel)]="newPatient.insurance" name="insurance" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Allergies -->
+      <div class="form-row">
+        <label for="allergies">Allergies:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="allergies" [(ngModel)]="newPatient.allergies" name="allergies" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button mat-button color="primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
