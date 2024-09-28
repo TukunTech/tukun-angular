@@ -1,0 +1,77 @@
+<div class="container">
+  <button mat-stroked-button class="back-button" routerLink="/home-elder">
+    <mat-icon>arrow_back</mat-icon> Return
+  </button>
+
+  <div class="profile-details">
+    <h2>Profile of Older Adults</h2>
+
+    <div class="info-section">
+      <label>Name:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Last Name:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>DNI:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Gender:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Age:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Group Blood:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Nationality:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Policy No.:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Sure:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <div class="info-section">
+      <label>Allergies:</label>
+      <div class="info-box" contenteditable="true"></div>
+    </div>
+
+    <button mat-stroked-button class="update-button" color="primary">Update</button>
+  </div>
+
+  <div class="medication-section">
+    <h3>Medicine:</h3>
+
+    <div class="medications-list">
+      <div *ngFor="let med of medications; let i = index">
+        <div class="medication-item">
+          {{med.name}}
+          <button mat-stroked-button (click)="editMedication(i)">Edit</button>
+          <button mat-stroked-button color="warn" (click)="deleteMedication(i)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <button mat-stroked-button class="add-drugs-button" (click)="addMedication()">Add Drugs</button>
+  </div>
+</div>

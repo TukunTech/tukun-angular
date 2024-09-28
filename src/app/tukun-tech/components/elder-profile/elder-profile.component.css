@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+.back-button,
+button.mat-stroked-button,
+.update-button,
+.add-drugs-button {
+  align-self: flex-start;
+  background-color: #0099B2 !important;
+  color: white !important;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  border: none;
+}
+
+
+.back-button:hover,
+button.mat-stroked-button:hover,
+.update-button:hover,
+.add-drugs-button:hover {
+  background-color: #007A94 !important;
+}
+
+.profile-details, .medication-section {
+  width: 45%;
+  background-color: #D9D9D9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.profile-details:last-child,
+.medication-section:last-child {
+  margin-right: 0;
+}
+
+.info-section {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  flex: 1;
+}
+
+.info-box {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  flex: 2;
+  background-color: #f9f9f9;
+}
+
+.medications-list {
+  margin-top: 15px;
+}
+
+.medication-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.medication-section h3 {
+  background-color: #54AFB2;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: left;
+  margin-bottom: 15px;
+}
