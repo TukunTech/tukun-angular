@@ -1,0 +1,92 @@
+<mat-toolbar>
+  <button mat-button routerLink="/registration">
+    <mat-icon>arrow_back</mat-icon> Return
+  </button>
+</mat-toolbar>
+
+<div class="registration-form-container">
+  <h1>Doctor/Nurse Registration</h1>
+  <div class="registration-form">
+    <form (ngSubmit)="addDoctor()">
+      <!-- Name -->
+      <div class="form-row">
+        <label for="name">Name:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="name" [(ngModel)]="newDoctor.name" name="name" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-row">
+        <label for="lastName">Last name:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="lastName" [(ngModel)]="newDoctor.lastName" name="lastName" required />
+        </mat-form-field>
+      </div>
+
+      <!-- DNI -->
+      <div class="form-row">
+        <label for="dni">DNI:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="dni" [(ngModel)]="newDoctor.dni" name="dni" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-row">
+        <label for="gender">Gender:</label>
+        <mat-form-field appearance="fill">
+          <mat-select id="gender" name="gender" required>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Age -->
+      <div class="form-row">
+        <label for="age">Age:</label>
+        <mat-form-field appearance="fill">
+          <input matInput type="number" id="age" [(ngModel)]="newDoctor.age" name="age" required />
+        </mat-form-field>
+      </div>
+
+      <!-- CMP Code -->
+      <div class="form-row">
+        <label for="cmpCode">CMP Code:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="cmpCode" [(ngModel)]="newDoctor.cmpCode" name="cmpCode" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Nationality -->
+      <div class="form-row">
+        <label for="nationality">Nationality:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="nationality" [(ngModel)]="newDoctor.nationality" name="nationality" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Specialization -->
+      <div class="form-row">
+        <label for="specialization">Specialization:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="specialization" [(ngModel)]="newDoctor.specialization" name="specialization" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Contact -->
+      <div class="form-row">
+        <label for="contact">Contact:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="contact" [(ngModel)]="newDoctor.contact" name="contact" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button mat-button color="primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
