@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="header">
+    <h1>Vital Signs Panel</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="panel vital-signs">
+      <h2>{{ patientName }}</h2>
+
+      <div class="sign-item">
+        <span>HR</span>
+        <div class="sign-value hr-value">
+          <span>{{ vitalSigns.heartRate }}</span>
+          <span class="unit">bpm</span>
+        </div>
+      </div>
+
+      <div class="sign-item">
+        <span>NIPB</span>
+        <div class="sign-value bp-value">
+          <span>{{ vitalSigns.bloodPressure.systolic }} / {{ vitalSigns.bloodPressure.diastolic }}</span>
+          <span class="unit">mmHg</span>
+        </div>
+      </div>
+
+      <div class="sign-item">
+        <span>SpO2</span>
+        <div class="sign-value spo2-value">
+          <span>{{ vitalSigns.oxygenSaturation }}</span>
+          <span class="unit">%</span>
+        </div>
+      </div>
+
+      <div class="sign-item">
+        <span>Temp</span>
+        <div class="sign-value temp-value">
+          <span>{{ vitalSigns.temperature }}</span>
+          <span class="unit">°C</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="panel alerts">
+      <h2>Alerts</h2>
+      <div class="alert-item no-alerts">
+        <mat-icon class="alert-icon">warning</mat-icon>
+        <span>No alerts</span>
+      </div>
+    </div>
+  </div>
+</div>
+<p>elder-vital-signs works!</p>
