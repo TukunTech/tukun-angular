@@ -1,0 +1,39 @@
+<div class="container">
+  <button mat-stroked-button class="back-button" routerLink="/home-elder">
+    <mat-icon>arrow_back</mat-icon> Return
+  </button>
+
+  <h2>Technical Support</h2>
+
+  <div class="cards-container">
+    <mat-card class="section-card faqs">
+      <div class="section-header faqs-header">
+        <span class="section-title">Frequently Asked Questions</span>
+      </div>
+
+      <div class="faq-item" *ngFor="let faq of faqs">
+        {{ faq }}
+      </div>
+    </mat-card>
+
+    <mat-card class="section-card request-help">
+      <div class="section-header help-header">
+        <span class="section-title">Request Help</span>
+      </div>
+
+      <div class="help-item">
+        <label>Support Number</label>
+        <span class="support-number">{{ supportNumber }}</span>
+      </div>
+
+      <div class="help-item">
+        <label>Send Message</label>
+        <textarea matInput placeholder="Type your message"></textarea>
+      </div>
+
+      <div class="send-button">
+        <button mat-raised-button color="primary">Send</button>
+      </div>
+    </mat-card>
+  </div>
+</div>
