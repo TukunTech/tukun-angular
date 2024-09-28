@@ -24,6 +24,7 @@ import {TechnicalSupportComponent} from "./tukun-tech/components/technical-suppo
 import {CreateAccountElderComponent} from "./tukun-tech/components/create-account-elder/create-account-elder.component";
 import {LoginElderComponent} from "./tukun-tech/components/login-elder/login-elder.component";
 import {ElderVitalSignsComponent} from "./tukun-tech/components/elder-vital-signs/elder-vital-signs.component";
+import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -39,6 +40,7 @@ export const appRoutes: Routes = [
   { path: 'appointments', component: AppointmentsComponent},
   { path: 'reshedule-appointments', component: ResheduleAppointmentsComponent},
   { path: 'schedule-appointments', component: ScheduleAppointmentsComponent},
+  { path: 'update-appointments' , component: UpdateAppointmentsComponent},
   { path: 'emergency-numbers', component: EmergencyNumbersComponent},
   { path: 'home-elder', component: HomeElderComponent},
   { path: 'elder-profile', component: ElderProfileComponent},

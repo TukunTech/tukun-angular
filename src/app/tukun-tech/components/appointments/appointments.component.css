@@ -13,11 +13,10 @@ h1 {
   margin: 3%;
 }
 
-/* Estructura Flex para opciones */
 .appointment-options {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
@@ -34,7 +33,6 @@ h1 {
   flex-shrink: 0;
 }
 
-/* Botón estilizado */
 .btn {
   border-radius: 20px;
   background: #0097B2;
@@ -55,7 +53,6 @@ h1 {
   background-color: #007BB5;
 }
 
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
   h1 {
     font-size: 36px;

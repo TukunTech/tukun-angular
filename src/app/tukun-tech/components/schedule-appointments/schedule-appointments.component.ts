@@ -9,6 +9,9 @@ import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from '@angular/material/core';
+import {NgForOf} from "@angular/common";
+import {DoctorApiService} from "../../services/doctors/doctor-api.service";
+import {Doctor} from "../../model/doctors/doctor.entity";
 
 @Component({
   selector: 'app-schedule-appointments',
@@ -29,12 +32,25 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     MatIconModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgForOf
   ],
   templateUrl: './schedule-appointments.component.html',
   styleUrl: './schedule-appointments.component.css'
 })
 export class ScheduleAppointmentsComponent {
+  doctors: Array<Doctor> =[];
+
+  constructor(private DoctorApi: DoctorApiService) { }
+  getDoctorInfo(){
+    this.DoctorApi.getDoctorInformation().subscribe((data:any) => {
+      console.log(data);
+      this.doctors = data;
+    })
+  }
+  ngOnInit() {
+    this.getDoctorInfo();
+  }
 
   onClick() {
     alert("Information has been saved!");

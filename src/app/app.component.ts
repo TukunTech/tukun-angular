@@ -8,6 +8,7 @@ import {MatToolbar} from "@angular/material/toolbar";
 import {LoginComponent} from "./tukun-tech/components/login/login.component";
 import {filter} from "rxjs";
 import {NgIf} from "@angular/common";
+import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,7 @@ export class AppComponent {
     { path: '/appointments', title: 'Appointments'},
     { path: '/reshedule-appointments', title: 'Reshedule Appointment'},
     { path: '/schedule-appointments', title: 'Schedule Appointment'},
+    { path: 'update-appointments' , component: UpdateAppointmentsComponent},
     { path: '/emergency-numbers', title: 'Emergency Numbers'},
     { path: '/home-elder', title: 'Home Elder'},
     { path: '/elder-profile', title: 'Elder Profile'},

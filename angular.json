@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tk-angular": {
+    "Tk": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tk-angular",
+            "outputPath": "dist/tk",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tk-angular:build:production"
+              "buildTarget": "Tk:build:production"
             },
             "development": {
-              "buildTarget": "tk-angular:build:development"
+              "buildTarget": "Tk:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "e6ecdf1c-39c3-4aae-b755-3d8410aa8e70"
+    "analytics": "55b89004-19cb-428f-b5c3-3cfe713936f1"
   }
 }

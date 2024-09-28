@@ -4,7 +4,7 @@
   padding: 20px;
 }
 
-
+/* Aplicamos el mismo estilo a los botones de Return, Update y Add Drugs */
 .back-button,
 button.mat-stroked-button,
 .update-button,
@@ -12,13 +12,13 @@ button.mat-stroked-button,
   align-self: flex-start;
   background-color: #0099B2 !important;
   color: white !important;
-  border-radius: 5px;
+  border-radius: 5px; /* Bordes suavizados */
   margin-bottom: 20px;
   padding: 8px 12px;
-  border: none;
+  border: none; /* Removemos el borde predeterminado */
 }
 
-
+/* Hover sobre los botones */
 .back-button:hover,
 button.mat-stroked-button:hover,
 .update-button:hover,

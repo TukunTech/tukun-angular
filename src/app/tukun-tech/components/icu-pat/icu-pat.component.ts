@@ -8,13 +8,13 @@ import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-icu-pat',
   standalone: true,
-  imports: [
-    MatCard,
-    MatCardContent,
-    MatCardHeader,
-    MatCardTitle,
-    NgForOf
-  ],
+    imports: [
+        MatCard,
+        MatCardContent,
+        MatCardHeader,
+        MatCardTitle,
+        NgForOf
+    ],
   templateUrl: './icu-pat.component.html',
   styleUrl: './icu-pat.component.css'
 })

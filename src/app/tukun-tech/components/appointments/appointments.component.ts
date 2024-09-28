@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
-import {RouterLink} from "@angular/router";
 import {MatButton} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-appointments',
   standalone: true,
   imports: [
-    NgOptimizedImage,
-    RouterLink,
-    MatButton
+    MatButton,
+    RouterLink
   ],
   templateUrl: './appointments.component.html',
   styleUrl: './appointments.component.css'
 })
-export class AppointmentComponent {
+export class AppointmentsComponent {
 
 }
-
