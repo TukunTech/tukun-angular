@@ -1,0 +1,34 @@
+<div class="container">
+  <button mat-stroked-button class="back-button" routerLink="/home-elder">
+    <mat-icon>arrow_back</mat-icon> Return
+  </button>
+
+  <h2>Reminders</h2>
+
+  <mat-card class="section-card pending">
+    <div class="section-header pending-header">
+      <mat-icon class="icon">alarm</mat-icon>
+      <span class="section-title">Pending Medications</span>
+    </div>
+
+    <div class="medication-item" *ngFor="let medication of pendingMedications">
+      <div class="medication-info">
+        {{medication.name}} <span>Take at {{medication.time}}</span>
+      </div>
+      <button mat-raised-button color="primary">Ready</button>
+    </div>
+  </mat-card>
+
+  <mat-card class="section-card taken">
+    <div class="section-header taken-header">
+      <span class="section-title">Medications Taken</span>
+    </div>
+
+    <div class="medication-item" *ngFor="let medication of takenMedications">
+      <div class="medication-info">
+        {{medication.name}} <span>Take at {{medication.time}}</span>
+      </div>
+      <button mat-raised-button color="accent">{{medication.status}}</button>
+    </div>
+  </mat-card>
+</div>
