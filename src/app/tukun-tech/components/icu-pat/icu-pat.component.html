@@ -1,0 +1,34 @@
+
+<div class="postoperative-container">
+  <h1>ICU Patients</h1>
+
+  <div class="cards-container">
+    <mat-card class="patient-card" *ngFor="let icuPatient of icuPatients">
+      <mat-card-header>
+        <mat-card-title>Bed {{icuPatient.bedNumber}} : {{icuPatient.name}}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="vital-sign">
+          <span>HR</span>
+          <span class="vital-value red">{{icuPatient.hr}} <small>bpm</small></span>
+        </div>
+
+        <div class="vital-sign">
+          <span>NIPB</span>
+          <span class="vital-value green">{{icuPatient.nipb.sys}} / {{icuPatient.nipb.dia}} <small>mmHg</small></span>
+        </div>
+
+        <div class="vital-sign">
+          <span>SpO2</span>
+          <span class="vital-value purple">{{icuPatient.spO2}} <small>%</small></span>
+        </div>
+
+        <div class="vital-sign">
+          <span>Temp</span>
+          <span class="vital-value">{{icuPatient.temp}} <small>°C</small></span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
