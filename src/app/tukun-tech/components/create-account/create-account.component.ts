@@ -23,7 +23,7 @@ export class CreateAccountComponent implements OnInit {
   createForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    // Inicializa el formulario sin validaciones
+    // Inicializa el formulario sin validacione
     this.createForm = this.fb.group({
       name: [''],
       ruc: [''],
