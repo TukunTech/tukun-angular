@@ -1,0 +1,74 @@
+<div class="create-container">
+
+  <!-- Contenedor blanco -->
+  <div class="create-box">
+
+    <div class="logo-tukun">
+      <img src="/assets/Logo.png" alt="logo">
+    </div>
+
+    <!-- Titulo -->
+    <h2>Create an account</h2>
+
+    <!-- Tipo de cuenta Switch -->
+    <div class="tipe-account">
+      <div class="rectangle">
+        <svg
+          width="250"
+          height="40"
+          viewBox="0 0 250 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="250" height="40" rx="10" fill="#5CB4B5" />
+        </svg>
+      </div>
+      <a class="text-elder" routerLink="/create-elder">Elder</a>
+      <a class="text-clinics" >Clinics</a>
+    </div>
+
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>CompanyName</mat-label>
+        <input matInput formControlName="name" placeholder="Company Name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>ruc</mat-label>
+        <input matInput formControlName="ruc" placeholder="ruc">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" placeholder="Company email">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>number</mat-label>
+        <input matInput formControlName="number" placeholder="Company phone number">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>city</mat-label>
+        <input matInput formControlName="city" placeholder="City">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>password</mat-label>
+        <input matInput formControlName="password" placeholder="Password" type="password">
+      </mat-form-field>
+    </form>
+
+    <!-- Boton create-->
+    <div class="button-create">
+      <button mat-raised-button class="button-create" routerLink="/home">Create</button>
+    </div>
+
+    <!-- Texto y boton alredy account -->
+    <div class="login-account">
+      <span class="text-login">Already have an account?</span>
+      <button  mat-raised-button class="button-login-account" routerLink="/login">Log in to your account</button>
+    </div>
+
+  </div>
+</div>
