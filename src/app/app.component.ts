@@ -33,27 +33,33 @@ export class AppComponent {
 
   options = [
     { path: '/home', title: 'Home' },
-    { path: '/registration', title: 'Registration' },
-    { path: '/patient-registration', title: 'Patient Registration' },
-    { path: '/patients', title: 'Patients'},
-    { path: '/doctors', title: 'Doctors'},
-    { path: '/postoperative', title: 'Postoperative Patients'},
-    { path: '/icu', title: 'Icu' },
     { path: '/login', title: 'Login' },
+    { path: '/registration', title: 'Registration' },
     { path: '/create-account', title: 'Create Account' },
-    { path: '/medical-registration', title: 'Medical Registration' },
-    { path: '/appointments', title: 'Appointments'},
-    { path: '/reshedule-appointments', title: 'Reshedule Appointment'},
-    { path: '/schedule-appointments', title: 'Schedule Appointment'},
-    { path: 'update-appointments' , component: UpdateAppointmentsComponent},
-    { path: '/emergency-numbers', title: 'Emergency Numbers'},
-    { path: '/home-elder', title: 'Home Elder'},
-    { path: '/elder-profile', title: 'Elder Profile'},
-    { path: '/elder-reminders', title: 'Elder Reminders'},
-    { path: '/technical-support', title: 'Technical Support'},
     { path: '/login-elder', title: 'Login Elder' },
     { path: '/create-elder', title: 'Create Account Elder' },
-    { path: '/elder-vital-signs', title: 'Elder Vital Signs'},
+
+    { path: '/patients', title: 'Patients'},
+    { path: '/patients/registration', title: 'Patient Registration' },
+
+    { path: '/doctors', title: 'Doctors'},
+    { path: '/doctors/registration', title: 'Medical Registration' },
+
+    { path: '/appointments', title: 'Appointments'},
+    { path: '/appointments/schedule', title: 'Schedule Appointment'},
+    { path: '/appointments/reschedule', title: 'Reschedule Appointment'},
+    { path: '/appointments/update' , title: 'Update Appointment'},
+
+    { path: '/postoperative', title: 'Postoperative Patients'},
+    { path: '/icu', title: 'Icu' },
+
+    { path: '/elder/home', title: 'Home Elder'},
+    { path: '/elder/profile', title: 'Elder Profile'},
+    { path: '/elder/reminders', title: 'Elder Reminders'},
+    { path: '/elder/vital-signs', title: 'Elder Vital Signs'},
+
+    { path: '/support/technical', title: 'Technical Support'},
+    { path: '/support/emergency-numbers', title: 'Emergency Numbers'},
 
   ]
 }

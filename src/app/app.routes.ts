@@ -28,28 +28,33 @@ import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appoin
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'patient-registration', component: PatientRegistrationComponent },
-  { path: 'medical-registration', component: MedicalRegistrationComponent},
-  { path: 'patients', component: PatientsComponent},
-  { path: 'doctors', component: DoctorsComponent},
-  { path: 'postoperative', component: PostPatComponent},
-  { path: 'icu', component: IcuPatComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'create-account', component: CreateAccountComponent},
-  { path: 'appointments', component: AppointmentsComponent},
-  { path: 'reshedule-appointments', component: ResheduleAppointmentsComponent},
-  { path: 'schedule-appointments', component: ScheduleAppointmentsComponent},
-  { path: 'update-appointments' , component: UpdateAppointmentsComponent},
-  { path: 'emergency-numbers', component: EmergencyNumbersComponent},
-  { path: 'home-elder', component: HomeElderComponent},
-  { path: 'elder-profile', component: ElderProfileComponent},
-  { path: 'elder-reminders', component: ElderRemindersComponent},
-  { path: 'technical-support', component: TechnicalSupportComponent},
+  { path: 'create-account', component: CreateAccountComponent },
   { path: 'login-elder', component: LoginElderComponent },
   { path: 'create-elder', component: CreateAccountElderComponent },
-  { path: 'elder-vital-signs', component: ElderVitalSignsComponent},
 
+  { path: 'patients', component: PatientsComponent },
+  { path: 'patients/registration', component: PatientRegistrationComponent },
+
+  { path: 'doctors', component: DoctorsComponent },
+  { path: 'doctors/registration', component: MedicalRegistrationComponent },
+
+  { path: 'appointments', component: AppointmentsComponent },
+  { path: 'appointments/schedule', component: ScheduleAppointmentsComponent },
+  { path: 'appointments/reschedule', component: ResheduleAppointmentsComponent },
+  { path: 'appointments/update', component: UpdateAppointmentsComponent },
+
+  { path: 'postoperative', component: PostPatComponent },
+  { path: 'icu', component: IcuPatComponent },
+
+  { path: 'elder/home', component: HomeElderComponent },
+  { path: 'elder/profile', component: ElderProfileComponent },
+  { path: 'elder/reminders', component: ElderRemindersComponent },
+  { path: 'elder/vital-signs', component: ElderVitalSignsComponent },
+
+  { path: 'support/technical', component: TechnicalSupportComponent },
+  { path: 'support/emergency-numbers', component: EmergencyNumbersComponent },
 
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
