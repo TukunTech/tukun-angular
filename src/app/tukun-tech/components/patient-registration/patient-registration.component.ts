@@ -9,6 +9,7 @@ import {MatIcon} from "@angular/material/icon";
 import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
 import {FormsModule} from "@angular/forms";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-patient-registration',
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     MatOption,
     MatIcon,
     MatLabel,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './patient-registration.component.html',
   styleUrl: './patient-registration.component.css'

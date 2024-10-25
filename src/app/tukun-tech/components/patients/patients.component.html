@@ -1,5 +1,5 @@
 <div class="patients-container">
-  <h1>Patients</h1>
+  <h1>{{ 'patients.title' | translate }}</h1>
 
   <div class="search-container">
     <input matInput placeholder="Search Patients">
@@ -12,22 +12,22 @@
     <table mat-table [dataSource]="patients" class="mat-elevation-z8">
 
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'patients.patientName' | translate }}</th>
         <td mat-cell *matCellDef="let patient"> {{patient.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'patients.age' | translate }}</th>
         <td mat-cell *matCellDef="let patient"> {{patient.age}} </td>
       </ng-container>
 
       <ng-container matColumnDef="bedNumber">
-        <th mat-header-cell *matHeaderCellDef> Bed Number </th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'patients.bedNumber' | translate }}</th>
         <td mat-cell *matCellDef="let patient"> {{patient.bedNumber}} </td>
       </ng-container>
 
       <ng-container matColumnDef="insurance">
-        <th mat-header-cell *matHeaderCellDef> Insurance </th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'patients.insurance' | translate }}</th>
         <td mat-cell *matCellDef="let patient"> {{patient.noOfPolicies}} </td>
       </ng-container>
 

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import {RouterLink} from "@angular/router";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-technical-support',
@@ -15,7 +16,8 @@ import {RouterLink} from "@angular/router";
     MatIconModule,
     MatInputModule,
     MatCardModule,
-    RouterLink
+    RouterLink,
+    TranslateModule
   ],
   templateUrl: './technical-support.component.html',
   styleUrl: './technical-support.component.css'

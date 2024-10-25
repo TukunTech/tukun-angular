@@ -15,6 +15,7 @@ import {
 } from "@angular/material/table";
 import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-patients',
@@ -35,7 +36,8 @@ import {PatientApiService} from "../../services/patients/patient-api.service";
     MatHeaderRow,
     MatHeaderRowDef,
     MatRow,
-    MatRowDef
+    MatRowDef,
+    TranslateModule
   ],
   templateUrl: './patients.component.html',
   styleUrl: './patients.component.css'

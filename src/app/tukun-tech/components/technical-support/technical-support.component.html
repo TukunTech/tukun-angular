@@ -3,12 +3,12 @@
     <mat-icon>arrow_back</mat-icon> Return
   </button>
 
-  <h2>Technical Support</h2>
+  <h2>{{ 'technical-support.title' | translate }}</h2>
 
   <div class="cards-container">
     <mat-card class="section-card faqs">
       <div class="section-header faqs-header">
-        <span class="section-title">Frequently Asked Questions</span>
+        <span class="section-title">{{ 'technical-support.questions' | translate }}</span>
       </div>
 
       <div class="faq-item" *ngFor="let faq of faqs">
@@ -18,21 +18,21 @@
 
     <mat-card class="section-card request-help">
       <div class="section-header help-header">
-        <span class="section-title">Request Help</span>
+        <span class="section-title">{{ 'technical-support.requestHelp' | translate }}</span>
       </div>
 
       <div class="help-item">
-        <label>Support Number</label>
+        <label>{{ 'technical-support.supportNumber' | translate }}</label>
         <span class="support-number">{{ supportNumber }}</span>
       </div>
 
       <div class="help-item">
-        <label>Send Message</label>
+        <label>{{ 'technical-support.sendMessage' | translate }}</label>
         <textarea matInput placeholder="Type your message"></textarea>
       </div>
 
       <div class="send-button">
-        <button mat-raised-button color="primary">Send</button>
+        <button mat-raised-button color="primary">{{ 'technical-support.buttonMessage' | translate }}</button>
       </div>
     </mat-card>
   </div>

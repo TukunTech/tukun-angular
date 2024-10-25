@@ -1,0 +1,53 @@
+{
+  "technical-support": {
+    "title": "Technical Support",
+    "questions": "Frequently Asked Questions",
+    "requestHelp": "Request Help",
+    "supportNumber": "Support Number",
+    "sendMessage" : "Send Message",
+    "buttonMessage": "Send"
+  },
+  "patient-registration": {
+    "title": "Patient Registration",
+    "name": "Name",
+    "lastName": "Last name",
+    "DNI": "DNI",
+    "gender": "Gender",
+    "age": "Age",
+    "bloodType": "Blood Type",
+    "nationality": "Nationality",
+    "nroPolicies": "No. of Policies",
+    "insurance": "Insurance",
+    "allergies": "Allergies",
+    "buttonReturn" : "Return",
+    "buttonSave": "Save"
+  },
+  "patients": {
+    "title": "Patients",
+    "patientName": "Patient Name",
+    "age": "Age",
+    "bedNumber": "Bed number",
+    "insurance": "Insurance"
+  },
+  "patientsHistory": {
+    "name": "Name",
+    "lastName": "Last name",
+    "DNI": "DNI",
+    "gender": "Gender",
+    "age": "Age",
+    "bloodType": "Blood Type",
+    "nationality": "Nationality",
+    "nroPolicies": "No. of Policies",
+    "insurance": "Insurance",
+    "allergies": "Alergies",
+    "buttonUpdate": "Update",
+    "appointments": "Appointments",
+    "treatment": "Treatment",
+    "exams": "Exams",
+    "medicalPrescriptions": "Medical prescriptions",
+    "buttonAdd": "Add"
+  }
+
+
+
+}

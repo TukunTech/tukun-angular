@@ -1,16 +1,16 @@
 <mat-toolbar>
   <button mat-button routerLink="/registration">
-    <mat-icon>arrow_back</mat-icon> Return
+    <mat-icon>arrow_back</mat-icon> {{ 'patient-registration.buttonReturn' | translate  }}
   </button>
 </mat-toolbar>
 
 <div class="registration-form-container">
-  <h1>Patient Registration</h1>
+  <h1>{{ 'patient-registration.title' | translate  }}</h1>
   <div class="registration-form">
     <form (ngSubmit)="addPatient()">
       <!-- Name -->
       <div class="form-row">
-        <label for="name">Name:</label>
+        <label for="name">{{ 'patient-registration.name' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="name" [(ngModel)]="newPatient.name" name="name" required />
         </mat-form-field>
@@ -18,7 +18,7 @@
 
       <!-- Last Name -->
       <div class="form-row">
-        <label for="lastName">Last name:</label>
+        <label for="lastName">{{ 'patient-registration.lastName' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="lastName" [(ngModel)]="newPatient.lastName" name="lastName" required />
         </mat-form-field>
@@ -26,7 +26,7 @@
 
       <!-- DNI -->
       <div class="form-row">
-        <label for="dni">DNI:</label>
+        <label for="dni">{{ 'patient-registration.DNI' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="dni" [(ngModel)]="newPatient.dni" name="dni" required />
         </mat-form-field>
@@ -34,7 +34,7 @@
 
       <!-- Gender -->
       <div class="form-row">
-        <label for="gender">Gender:</label>
+        <label for="gender">{{ 'patient-registration.gender' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <mat-select id="gender" name="gender" required>
             <mat-option value="male">Male</mat-option>
@@ -45,7 +45,7 @@
 
       <!-- Age -->
       <div class="form-row">
-        <label for="age">Age:</label>
+        <label for="age">{{ 'patient-registration.age' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput type="number" id="age" [(ngModel)]="newPatient.age" name="age" required />
         </mat-form-field>
@@ -53,7 +53,7 @@
 
       <!-- Blood Type -->
       <div class="form-row">
-        <label for="bloodType">Blood Type:</label>
+        <label for="bloodType">{{ 'patient-registration.bloodType' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="bloodType" [(ngModel)]="newPatient.bloodType" name="bloodType" required />
         </mat-form-field>
@@ -61,7 +61,7 @@
 
       <!-- Nationality -->
       <div class="form-row">
-        <label for="nationality">Nationality:</label>
+        <label for="nationality">{{ 'patient-registration.nationality' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="nationality" [(ngModel)]="newPatient.nationality" name="nationality" required />
         </mat-form-field>
@@ -69,7 +69,7 @@
 
       <!-- No. of Policies -->
       <div class="form-row">
-        <label for="policies">No. of Policies:</label>
+        <label for="policies">{{ 'patient-registration.nroPolicies' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="policies" type="number" [(ngModel)]="newPatient.noOfPolicies" name="policies" required />
         </mat-form-field>
@@ -77,7 +77,7 @@
 
       <!-- Insurance -->
       <div class="form-row">
-        <label for="insurance">Insurance:</label>
+        <label for="insurance">{{ 'patient-registration.insurance' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="insurance" [(ngModel)]="newPatient.insurance" name="insurance" required />
         </mat-form-field>
@@ -85,7 +85,7 @@
 
       <!-- Allergies -->
       <div class="form-row">
-        <label for="allergies">Allergies:</label>
+        <label for="allergies">{{ 'patient-registration.allergies' | translate  }}:</label>
         <mat-form-field appearance="fill">
           <input matInput id="allergies" [(ngModel)]="newPatient.allergies" name="allergies" required />
         </mat-form-field>
@@ -93,7 +93,7 @@
 
       <!-- Submit Button -->
       <div class="form-actions">
-        <button mat-button color="primary" type="submit">Save</button>
+        <button mat-button color="primary" type="submit">{{ 'patient-registration.buttonSave' | translate  }}</button>
       </div>
     </form>
   </div>
