@@ -1,4 +1,5 @@
 {
+
   "technical-support": {
     "title": "Soporte Técnico",
     "questions": "Preguntas Frecuentes",
@@ -88,6 +89,7 @@
     "edit": "Editar",
     "delete": "Eliminar"
   },
+
   "Reminders": {
     "title": "Recordatorios",
     "pendingMedications": "Medicamentos Pendientes",
@@ -95,7 +97,94 @@
     "return": "Regresar",
     "ready": "Listo",
     "earning": "Ganancia"
+  },
+
+
+
+
+
+
+  "navbar": {
+    "postPatients": "Pacientes Postoperatorios",
+    "icu": "Pacientes en UCI",
+    "registration": "Registro",
+    "patients": "Pacientes",
+    "doctors": "Médicos",
+    "appointments": "Citas"
+  },
+
+  "LoginClincs": {
+    "title": "Acceso",
+    "clinics": "Clínicas",
+    "elder": "Adulto Mayor",
+    "email": "Correo",
+    "password": "Contraseña",
+    "logIn": "Ingresar",
+    "forgotPassword": "He olvidado mi contraseña",
+    "dontHaveAccount": "¿No tienes una cuenta? Crea una",
+    "createAccount": "Crear una cuenta"
+  },
+
+  "LoginElder": {
+    "title": "Acceso",
+    "clinics": "Clínicas",
+    "elder": "Adulto Mayor",
+    "email": "Correo",
+    "password": "Contraseña",
+    "logIn": "Ingresar",
+    "forgotPassword": "He olvidado mi contraseña",
+    "dontHaveAccount": "¿No tienes una cuenta? Crea una",
+    "createAccount": "Crear una cuenta"
+  },
+
+  "CreateAccountClinics": {
+    "title": "Crear una cuenta",
+    "clinics": "Clínicas",
+    "elder": "Adulto Mayor",
+    "companyName": "Nombre de la compañia",
+    "ruc": "Ruc",
+    "email": "Correo",
+    "number": "Número",
+    "city": "Ciudad",
+    "password": "Contraseña",
+    "create": "Crear cuenta",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "login": "Ingresa en tu cuenta"
+  },
+
+  "CreateAccountElder": {
+    "title": "Crear una cuenta",
+    "clinics": "Clínicas",
+    "elder": "Adulto Mayor",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "dni": "DNI",
+    "email": "Correo",
+    "password": "Contraseña",
+    "age": "Edad",
+    "create": "Crear cuenta",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "login": "Ingresa en tu cuenta"
+  },
+
+  "HomeClincs": {
+    "title": "Bienvenido:",
+    "subTitle": "¿Por dónde quieres empezar?",
+    "postoperative": "Pacientes Postoperatorios",
+    "icu": "Pacientes en UCI",
+    "registration": "Registro",
+    "patients": "Pacientes",
+    "doctors": "Médicos",
+    "appointments": "Citas"
+  },
+
+  "postPatients": {
+    "title": "Pacientes Postoperatorios",
+    "bed": "Cama"
   }
+
+
+
 
 
 }

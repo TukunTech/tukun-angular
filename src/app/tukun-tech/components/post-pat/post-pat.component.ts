@@ -7,6 +7,7 @@ import {NgForOf} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
 import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-post-pat',
@@ -20,7 +21,8 @@ import {PatientApiService} from "../../services/patients/patient-api.service";
     MatCardHeader,
     MatCardContent,
     MatIcon,
-    MatCardTitle
+    MatCardTitle,
+    TranslateModule
   ],
   templateUrl: './post-pat.component.html',
   styleUrl: './post-pat.component.css'

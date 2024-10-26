@@ -5,6 +5,7 @@ import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatCard} from "@angular/material/card";
 import {NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ import {MatIcon} from "@angular/material/icon";
     MatCard,
     NgOptimizedImage,
     MatIconButton,
-    MatIcon
+    MatIcon,
+    TranslateModule
   ],
   styleUrls: ['./home.component.css']
 })

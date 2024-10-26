@@ -9,16 +9,17 @@ import {LoginComponent} from "./tukun-tech/components/login/login.component";
 import {filter} from "rxjs";
 import {NgIf} from "@angular/common";
 import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
+import {SwitchLanguageComponent} from "./tukun-tech/components/switch-language/switch-language.component";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, RegistrationComponent, MatButton, MatIcon, MatIconButton, MatToolbar, RouterLink, LoginComponent, NgIf],
+  imports: [RouterOutlet, HomeComponent, SwitchLanguageComponent, RegistrationComponent, MatButton, MatIcon, MatIconButton, MatToolbar, RouterLink, LoginComponent, NgIf, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
 
   title = 'TukunTech';
 

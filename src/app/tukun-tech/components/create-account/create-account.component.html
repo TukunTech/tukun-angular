@@ -8,7 +8,7 @@
     </div>
 
     <!-- Titulo -->
-    <h2>Create an account</h2>
+    <h2> {{ 'CreateAccountClinics.title' | translate}} </h2>
 
     <!-- Tipo de cuenta Switch -->
     <div class="tipe-account">
@@ -23,51 +23,51 @@
           <rect width="250" height="40" rx="10" fill="#5CB4B5" />
         </svg>
       </div>
-      <a class="text-elder" routerLink="/create-elder">Elder</a>
-      <a class="text-clinics" >Clinics</a>
+      <a class="text-elder" routerLink="/create-elder"> {{ 'CreateAccountClinics.elder' | translate}} </a>
+      <a class="text-clinics" >{{ 'CreateAccountClinics.clinics' | translate}} </a>
     </div>
 
     <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill">
-        <mat-label>CompanyName</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.companyName' | translate}}</mat-label>
         <input matInput formControlName="name" placeholder="Company Name">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>ruc</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.ruc' | translate}}</mat-label>
         <input matInput formControlName="ruc" placeholder="ruc">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>email</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.email' | translate}}</mat-label>
         <input matInput formControlName="email" placeholder="Company email">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>number</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.number' | translate}}</mat-label>
         <input matInput formControlName="number" placeholder="Company phone number">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>city</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.city' | translate}}</mat-label>
         <input matInput formControlName="city" placeholder="City">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>password</mat-label>
+        <mat-label>{{ 'CreateAccountClinics.password' | translate}}</mat-label>
         <input matInput formControlName="password" placeholder="Password" type="password">
       </mat-form-field>
     </form>
 
     <!-- Boton create-->
     <div class="button-create">
-      <button mat-raised-button class="button-create" routerLink="/home">Create</button>
+      <button mat-raised-button class="button-create" routerLink="/home">{{ 'CreateAccountClinics.create' | translate}}</button>
     </div>
 
     <!-- Texto y boton alredy account -->
     <div class="login-account">
-      <span class="text-login">Already have an account?</span>
-      <button  mat-raised-button class="button-login-account" routerLink="/login">Log in to your account</button>
+      <span class="text-login">{{ 'CreateAccountClinics.haveAccount' | translate}}</span>
+      <button  mat-raised-button class="button-login-account" routerLink="/login">{{ 'CreateAccountClinics.login' | translate}}</button>
     </div>
 
   </div>

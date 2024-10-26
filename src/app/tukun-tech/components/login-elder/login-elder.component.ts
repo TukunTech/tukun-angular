@@ -4,6 +4,7 @@ import {MatButton} from "@angular/material/button";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {RouterLink} from "@angular/router";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @Component({
@@ -15,7 +16,8 @@ import {RouterLink} from "@angular/router";
     MatFormField,
     MatInput,
     RouterLink,
-    MatLabel
+    MatLabel,
+    TranslateModule
   ],
   templateUrl: './login-elder.component.html',
   styleUrl: './login-elder.component.css'

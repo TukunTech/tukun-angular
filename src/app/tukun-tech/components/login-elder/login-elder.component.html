@@ -6,7 +6,7 @@
       <img src="/assets/Logo.png">
     </div>
 
-    <h2>Log in to your account</h2>
+    <h2>{{'LoginElder.title' | translate }}</h2>
 
     <div class="tipe-account">
       <div class="rectangle">
@@ -20,8 +20,8 @@
           <rect width="250" height="40" rx="10" fill="#5CB4B5" />
         </svg>
       </div>
-      <a class="text-elder">Elder</a>
-      <a class="text-clinics" href="#">Clinics</a>
+      <a class="text-elder">{{'LoginElder.elder' | translate }}</a>
+      <a class="text-clinics" href="#">{{'LoginElder.clinics' | translate }}</a>
     </div>
 
     <div class="social-login">
@@ -40,27 +40,27 @@
 
     <form [formGroup]="loginElderForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
+        <mat-label>{{'LoginElder.email' | translate }}</mat-label>
         <input matInput formControlName="email" placeholder="Email">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
+        <mat-label>{{'LoginElder.password' | translate }}</mat-label>
         <input matInput formControlName="password" placeholder="Password" type="password">
       </mat-form-field>
 
       <div class="boto">
-        <button mat-raised-button class="boto" type="submit" routerLink="/elder/home">Log In</button>
+        <button mat-raised-button class="boto" type="submit" routerLink="/elder/home">{{'LoginElder.logIn' | translate }}</button>
       </div>
     </form>
 
     <div class="i-forgot-my-pass">
-      <a href="#">I forgot my password</a>
+      <a href="#">{{'LoginElder.forgotPassword' | translate }}</a>
     </div>
 
     <div class="create-account">
-      <span>Don't have an account? Create one</span>
-      <button mat-raised-button class="button-create-account" routerLink="/create-elder">Create an account</button>
+      <span>{{'LoginElder.dontHaveAccount' | translate }}</span>
+      <button mat-raised-button class="button-create-account" routerLink="/create-elder">{{'LoginElder.createAccount' | translate }}</button>
     </div>
   </div>
 </div>

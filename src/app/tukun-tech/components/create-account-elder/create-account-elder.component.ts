@@ -4,6 +4,7 @@ import {MatInput} from "@angular/material/input";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-create-account-elder',
@@ -14,7 +15,8 @@ import {RouterLink} from "@angular/router";
     ReactiveFormsModule,
     MatButton,
     RouterLink,
-    MatLabel
+    MatLabel,
+    TranslateModule
   ],
   templateUrl: './create-account-elder.component.html',
   styleUrl: './create-account-elder.component.css'
@@ -26,10 +28,10 @@ export class CreateAccountElderComponent {
     // Inicializa el formulario sin validaciones
     this.createAccountElderForm = this.fb.group({
       name: [''],
-      ruc: [''],
+      lastName: [''],
+      dni: [''],
+      age: [''],
       email: [''],
-      number: [''],
-      city: [''],
       password: ['']
     });
   }

@@ -118,8 +118,13 @@ button:hover {
   width: 100%;
   padding-left: 40px;
 }
-.subt{
+.subt {
   font-family: 'Quicksand', sans-serif;
-
 }
+
+
+.switch-language-button2 {
+  margin-right: 220px;
+}
+
 

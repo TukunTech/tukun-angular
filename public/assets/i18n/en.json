@@ -49,4 +49,87 @@
   },
 
 
+  "navbar": {
+    "postPatients": "PostPatients",
+    "icu": "ICU Patients",
+    "registration": "Registration",
+    "patients": "Patients",
+    "doctors": "Doctors",
+    "appointments": "Appointments"
+  },
+
+
+  "LoginClincs": {
+    "title": "Login",
+    "clinics": "Clinics",
+    "elder": "Elder",
+    "email": "Email",
+    "password": "Password",
+    "logIn": "Log In",
+    "forgotPassword": "I forgot my password",
+    "dontHaveAccount": "Don't have an account? Create one",
+    "createAccount": "Create an account"
+  },
+
+  "LoginElder": {
+    "title": "Log in to your account",
+    "clinics": "Clinics",
+    "elder": "Elder",
+    "email": "Email",
+    "password": "Password",
+    "logIn": "Log In",
+    "forgotPassword": "I forgot my password",
+    "dontHaveAccount": "Don't have an account? Create one",
+    "createAccount": "Create an account"
+  },
+
+  "CreateAccountClinics": {
+    "title": "Create an account",
+    "clinics": "Clinics",
+    "elder": "Elder",
+    "companyName": "Company Name",
+    "ruc": "Ruc",
+    "email": "Email",
+    "number": "Number",
+    "city": "City",
+    "password": "Password",
+    "create": "Create account",
+    "haveAccount": "Already have an account?",
+    "login": "Log into your account"
+  },
+
+  "CreateAccountElder": {
+    "title": "Create an account",
+    "clinics": "Clinics",
+    "elder": "Elder",
+    "name": "Name",
+    "lastName": "Last Name",
+    "dni": "DNI",
+    "email": "Email",
+    "password": "Password",
+    "age": "Age",
+    "create": "Create account",
+    "haveAccount": "Already have an account?",
+    "login": "Log into your account"
+  },
+
+  "HomeClincs": {
+    "title": "Welcome:",
+    "subTitle": "Where do you want to start?",
+    "postoperative": "Postoperative Patients",
+    "icu": "ICU Patients",
+    "registration": "Registration",
+    "patients": "Patients",
+    "doctors": "Doctors",
+    "appointments": "Appointments"
+  },
+
+  "postPatients": {
+    "title": "Postoperative Patients",
+    "bed": "Bed"
+  }
+
+
+
+
 }

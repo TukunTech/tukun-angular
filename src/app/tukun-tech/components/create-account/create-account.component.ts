@@ -4,6 +4,7 @@ import {MatInput} from "@angular/material/input";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-create-account',
@@ -15,6 +16,7 @@ import {RouterLink} from "@angular/router";
     MatButton,
     RouterLink,
     MatLabel,
+    TranslateModule,
   ],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
