@@ -46,6 +46,55 @@
     "exams": "Exámenes",
     "medicalPrescriptions": "Preinscripciones médicas",
     "buttonAdd": "Añadir"
+  },
+  "home-elder": {
+    "welcome": "Bienvenido",
+    "home-message": "¿Por dónde quieres empezar?",
+    "vitalSigns": "Panel de Signos Vitales",
+    "olderAdultProfile": "Perfil del Adulto Mayor",
+    "emergencyNumbers": "Números de Emergencia",
+    "reminders": "Recordatorios",
+    "technicalSupport": "Soporte Técnico"
+  },
+  "Vital-Signs-Panel": {
+    "title": "Panel de Signos Vitales",
+    "alerts": "Alertas",
+    "alertMessage": "Sin Alertas"
+  },
+  "Older-Adult-Profile": {
+    "title": "Perfil del Adulto Mayor",
+    "return": "Regresar",
+    "name": "Nombre",
+    "lastname": "Apellido",
+    "dni": "DNI",
+    "gender": "Género",
+    "age": "Edad",
+    "groupBlood": "Grupo Sanguíneo",
+    "nationality": "Nacionalidad",
+    "policy": "No. de Póliza",
+    "Sure": "Seguro",
+    "allergies": "Alergias",
+    "medicine": "Medicamento",
+    "update": "Actualizar",
+    "addDrugs": "Añadir Medicamentos"
+  },
+  "Emergency-Numbers": {
+    "title": "Números de Emergencia",
+    "return": "Regresar",
+    "familyContact": "Contacto Familiar",
+    "emergencyNumber": "Número de Emergencia",
+    "addContact": "Añadir Contacto",
+    "addNumber": "Añadir Número",
+    "edit": "Editar",
+    "delete": "Eliminar"
+  },
+  "Reminders": {
+    "title": "Recordatorios",
+    "pendingMedications": "Medicamentos Pendientes",
+    "medicationsTaken": "Medicamentos Tomados",
+    "return": "Regresar",
+    "ready": "Listo",
+    "earning": "Ganancia"
   }
 
 
