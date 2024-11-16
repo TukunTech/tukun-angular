@@ -22,7 +22,7 @@ export class IcuPatComponent {
   icuPatients:  Array<Patient> = [];
   constructor(private PatientApi: PatientApiService) { }
   getIcuPatientsInfo(){
-    this.PatientApi.getPatientInformation().subscribe((data: any) => {
+    this.PatientApi.getPatient().subscribe((data: any) => {
       console.log(data);
       this.icuPatients = data;
     })
