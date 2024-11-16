@@ -31,7 +31,7 @@ export class PostPatComponent {
   postPatients:  Array<Patient> = [];
   constructor(private PatientApi: PatientApiService) { }
   getPostPatientsInfo(){
-    this.PatientApi.getPatientInformation().subscribe((data: any) => {
+    this.PatientApi.getPatient().subscribe((data: any) => {
       console.log(data);
       this.postPatients = data;
     })

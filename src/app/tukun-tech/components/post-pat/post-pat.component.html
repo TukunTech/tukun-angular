@@ -3,32 +3,7 @@
   <h1>{{'postPatients.title' | translate}}</h1>
 
   <div class="cards-container">
-    <mat-card class="patient-card" *ngFor="let postPatient of postPatients">
-      <mat-card-header>
-        <mat-card-title>{{'postPatients.bed' | translate}} {{postPatient.bedNumber}} : {{postPatient.name}}</mat-card-title>
-      </mat-card-header>
 
-      <mat-card-content>
-        <div class="vital-sign">
-          <span>HR</span>
-          <span class="vital-value red">{{postPatient.hr}} <small>bpm</small></span>
-        </div>
 
-        <div class="vital-sign">
-          <span>NIPB</span>
-          <span class="vital-value green">{{postPatient.nipb.sys}} / {{postPatient.nipb.dia}} <small>mmHg</small></span>
-        </div>
-
-        <div class="vital-sign">
-          <span>SpO2</span>
-          <span class="vital-value purple">{{postPatient.spO2}} <small>%</small></span>
-        </div>
-
-        <div class="vital-sign">
-          <span>Temp</span>
-          <span class="vital-value">{{postPatient.temp}} <small>°C</small></span>
-        </div>
-      </mat-card-content>
-    </mat-card>
   </div>
 </div>
