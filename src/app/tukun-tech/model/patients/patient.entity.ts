@@ -1,40 +1,26 @@
+import {BloodType} from "./blood-type";
+import {Nationality} from "./nationality";
+import {Gender} from "./gender";
+
 export class Patient {
-  id: string;
+  id: number;
   name: string;
   lastName: string;
   dni: string;
   age: number;
-  bloodType: string;
-  nationality: string;
-  noOfPolicies: string;
-  insurance: string;
-  bedNumber: string;
-  allergies: string;
-  hr: number;
-  nipb:{
-    sys: number;
-    dia: number;
-  }
-  spO2: number;
-  temp: number;
-  constructor() {
-    this.id = '';
-    this.name = '';
-    this.lastName = '';
-    this.dni = '';
-    this.age = 0;
-    this.bloodType = '';
-    this.nationality = '';
-    this.noOfPolicies = '';
-    this.insurance = '';
-    this.bedNumber = '';
-    this.allergies = '';
-    this.hr = 0;
-    this.nipb = {
-      sys: 0,
-      dia: 0
-    }
-    this.spO2 = 0;
-    this.temp = 0;
+  bloodType: BloodType;
+  nationality: Nationality;
+  gender: Gender;
+
+
+  constructor(id: number, name: string, lastName: string, dni: string, age: number, bloodType: BloodType, nationality: Nationality, gender: Gender) {
+    this.id = id;
+    this.name = name;
+    this.lastName = lastName;
+    this.dni = dni;
+    this.age = age;
+    this.bloodType = bloodType;
+    this.nationality = nationality;
+    this.gender = gender;
   }
 }
