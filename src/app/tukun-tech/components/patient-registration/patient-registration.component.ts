@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
@@ -10,6 +10,14 @@ import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
 import {FormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
+import Swal from "sweetalert2";
+import {NgForOf} from "@angular/common";
+import {Gender} from "../../model/patients/gender";
+import {UtilService} from "../../services/patients/util.service";
+import {BloodType} from "../../model/patients/blood-type";
+import {Nationality} from "../../model/patients/nationality";
+
+
 
 @Component({
   selector: 'app-patient-registration',
@@ -25,63 +33,78 @@ import {TranslateModule} from "@ngx-translate/core";
     MatIcon,
     MatLabel,
     FormsModule,
-    TranslateModule
+    TranslateModule,
+    NgForOf
   ],
   templateUrl: './patient-registration.component.html',
   styleUrl: './patient-registration.component.css'
 })
-export class PatientRegistrationComponent {
-  patients: Array<Patient> = [];
-  newPatient: Patient = {
-    id : '',
-    name : '',
-    lastName : '',
-    dni : '',
-    age : 0,
-    bloodType : '',
-    nationality : '',
-    noOfPolicies : '',
-    insurance: '',
-    bedNumber : '',
-    allergies : '',
-    hr : 0,
-    nipb : {
-      sys: 0,
-      dia: 0
+export class PatientRegistrationComponent implements OnInit {
+
+  patient: Patient = {
+    id : 0,
+    name: "",
+    lastName: "",
+    dni: "",
+    age: 0,
+    bloodType: {
+      id : -1,
+      type : "-1",
     },
-    spO2 : 0,
-    temp : 0,
-  };
+    nationality: {
+      id : -1,
+      nationality : "-1",
+    },
+    gender: {
+      id : -1,
+      gender : "-1",
+    }
+  }
+  genders : Gender[] = [];
+  bloods : BloodType[] = [];
+  nations : Nationality[] = [];
 
-  constructor(private PatientApi: PatientApiService) {  }
-  addPatient(){
-    this.PatientApi.postPatientInformation(this.newPatient).subscribe(response =>{
-      console.log('Patient added: ', response);
-      this.resetForm();
-    });
+  constructor(private patientsservice: PatientApiService, private utilservice:UtilService) {
+     this.utilservice.getGender().subscribe(response => this.genders = response)
+    this.utilservice.getBloodType().subscribe(response => this.bloods = response)
+    this.utilservice.getNationality().subscribe(response => this.nations = response)
   }
 
-  resetForm(){
-    this.newPatient = {
-      id : '',
-      name : '',
-      lastName : '',
-      dni : '',
-      age : 0,
-      bloodType : '',
-      nationality : '',
-      noOfPolicies : '',
-      insurance: '',
-      bedNumber : '',
-      allergies : '',
-      hr : 0,
-      nipb : {
-        sys: 0,
-        dia: 0
+
+  register() {
+
+    this.patientsservice.postPatient(this.patient).subscribe(
+      x => {
+        document.getElementById("btn_reg_cerrar")?.click();
+        Swal.fire('Mensaje', x.mensaje, 'success');
+      }
+    );
+
+    //limpiar los componentes del formulario a través de los ngModel
+    this.patient = {
+      id: 0,
+      name: "",
+      lastName: "",
+      dni: "",
+      age: 0,
+      bloodType: {
+        id: -1,
+        type: "-1",
       },
-      spO2 : 0,
-      temp : 0,
-    };
+      nationality: {
+        id: -1,
+        nationality: "-1",
+      },
+      gender: {
+        id: -1,
+        gender: "-1",
+      }
+    }
   }
+
+  ngOnInit(): void {
+    console.log(this.genders);}
+
+
 
 }
