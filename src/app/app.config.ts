@@ -6,6 +6,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {HttpClient, provideHttpClient} from "@angular/common/http";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {AppComponent} from "./app.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,5 +26,5 @@ export const appConfig: ApplicationConfig = {
         }
       })
     ), provideAnimationsAsync()
-  ]
+  ],
 };

@@ -20,14 +20,19 @@
     "insurance": "Insurance",
     "allergies": "Allergies",
     "buttonReturn" : "Return",
-    "buttonSave": "Save"
+    "buttonSave": "Save",
+    "update": "Update"
   },
+
+
   "patients": {
     "title": "Patients",
     "patientName": "Patient Name",
     "age": "Age",
+    "bloodType": "Blood Type",
     "bedNumber": "Bed number",
-    "insurance": "Insurance"
+    "insurance": "Insurance",
+    "update": "Update"
   },
   "patientsHistory": {
     "name": "Name",

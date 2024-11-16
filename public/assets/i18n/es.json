@@ -21,14 +21,17 @@
     "insurance": "Seguro",
     "allergies": "Alergias",
     "buttonReturn" : "Volver",
-    "buttonSave": "Guardar"
+    "buttonSave": "Guardar",
+    "update": "Actualizar"
   },
   "patients": {
     "title": "Pacientes",
     "patientName": "Nombre de paciente",
     "age": "Edad",
+    "bloodType": "Blood Type",
     "bedNumber": "Número de cama",
-    "insurance": "Seguro"
+    "insurance": "Seguro",
+    "update": "Actualizar"
   },
   "patientsHistory": {
     "name": "Nombres",
