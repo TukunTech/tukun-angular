@@ -1,59 +1,112 @@
-import { Component } from '@angular/core';
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatButton, MatIconButton} from "@angular/material/button";
-import {RouterLink} from "@angular/router";
-import {MatInput} from "@angular/material/input";
-import {MatIcon} from "@angular/material/icon";
-import {
-  MatCell,
-  MatCellDef,
-  MatColumnDef,
-  MatHeaderCell,
-  MatHeaderCellDef,
-  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
-  MatTable
-} from "@angular/material/table";
+import {Component, OnInit} from "@angular/core";
 import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
 import {TranslateModule} from "@ngx-translate/core";
+import {MatIcon} from "@angular/material/icon";
+import {MatTable} from "@angular/material/table";
+import {NgForOf} from "@angular/common";
+import Swal from 'sweetalert2';
+import {FormsModule} from "@angular/forms";
+import {Gender} from "../../model/patients/gender";
+import {BloodType} from "../../model/patients/blood-type";
+import {Nationality} from "../../model/patients/nationality";
 
 @Component({
   selector: 'app-patients',
   standalone: true,
   imports: [
-    MatToolbar,
-    MatButton,
-    RouterLink,
-    MatInput,
-    MatIconButton,
+    TranslateModule,
     MatIcon,
     MatTable,
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatCell,
-    MatCellDef,
-    MatHeaderRow,
-    MatHeaderRowDef,
-    MatRow,
-    MatRowDef,
-    TranslateModule
+    NgForOf,
+    FormsModule
   ],
   templateUrl: './patients.component.html',
   styleUrl: './patients.component.css'
 })
-export class PatientsComponent {
-  displayedColumns: string[] = ['name', 'age', 'bedNumber', 'insurance'];
-  patients: Array<Patient> = [];
-  constructor(private PatientApi: PatientApiService) { }
-  getPatientInfo(){
-    this.PatientApi.getPatientInformation().subscribe((data:any) => {
-      console.log(data);
-      this.patients = data;
-    })
+
+
+
+export class PatientsComponent implements OnInit {
+
+  patients: Patient[] = [];
+  patient: Patient = {
+    id : 0,
+    name: "",
+    lastName: "",
+    dni: "",
+    age: 0,
+    bloodType: {
+      id : -1,
+      type : "-1",
+    },
+    nationality: {
+      id : -1,
+      nationality : "-1",
+    },
+    gender: {
+      id : -1,
+      gender : "-1",
+    }
+  }
+  genders : Gender[] = [];
+  bloods : BloodType[] = [];
+  nations : Nationality[] = [];
+
+  constructor(private patientsservice: PatientApiService) {
   }
   ngOnInit() {
-    this.getPatientInfo();
+    this.consulta();
+  }
+
+  consulta(){
+    this.patientsservice.getPatient().subscribe(x => this.patients=x);
+  }
+
+  buscar(obj:Patient){
+   this.patient=obj;
+   console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+  }
+
+
+  actualizar(){
+    this.patientsservice.putPatient(this.patient).subscribe(
+      x=>{
+        Swal.fire('actualizado', x.message, 'info');
+        this.patientsservice.getPatient().subscribe(
+          x=>this.patients=x
+        );
+      });
+
+  }
+
+
+
+
+  eliminar(obj:Patient){
+    Swal.fire({
+      title: '¿Desea eliminar?',
+      text: "Los cambios no se van a revertir",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, elimina.',
+      cancelButtonText: 'No, cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.patientsservice.deletePatient(obj.id || 0).subscribe(
+          x  =>  {
+            Swal.fire('Registro eliminado',x.mensaje,'success');
+            this.patientsservice.getPatient().subscribe(
+              x => this.patients = x
+            );
+          }
+        );
+
+      }
+    })
   }
 
 }
