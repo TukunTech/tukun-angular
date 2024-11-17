@@ -1,24 +1,27 @@
+import {Specialization} from "./specialization";
+import {Nationality} from "../patients/nationality";
+
 export class Doctor {
-  id: string;
+  id: number;
   name: string;
   lastName: string;
   dni: string;
   age: number;
-  cmpCode: string;
-  nationality: string;
-  specialization: string;
+  codeCmp: string;
+  nationality: Nationality;
+  specialization: Specialization;
   contact: string;
 
-  constructor() {
-    this.id = '';
-    this.name = '';
-    this.lastName = '';
-    this.dni = '';
-    this.age = 0;
-    this.cmpCode = '';
-    this.nationality = '';
-    this.specialization = '';
-    this.contact = '';
+  constructor(id: number, name: string, lastName: string, dni: string, age: number,specialization: Specialization , codeCMP: string, contact: string, nationality: Nationality) {
+    this.id = id;
+    this.name = name;
+    this.lastName = lastName;
+    this.dni = dni;
+    this.age = age;
+    this.codeCmp = codeCMP;
+    this.nationality = nationality;
+    this.specialization = specialization;
+    this.contact = contact;
   }
 
 }
