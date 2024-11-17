@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {BloodType} from "../../model/patients/blood-type";
 import {Nationality} from "../../model/patients/nationality";
 import {Gender} from "../../model/patients/gender";
+import {Specialization} from "../../model/doctors/specialization";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class UtilService {
 
   getGender(): Observable<Gender[]>{
     return this.http.get<Gender[]>(this.baseUrl+'/listGender')
+  }
+
+  getSpecialization(): Observable<Specialization[]>{
+   return this.http.get<Specialization[]>(this.baseUrl+'/listSpecialization')
   }
 
 
