@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Doctor} from "../../model/doctors/doctor.entity";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorApiService {
-  baseUrl = `https://tukun-tech1.free.beeceptor.com/api/doctors`;
+  baseUrl = 'http://localhost:8080/api/v1/medics';
 
   constructor(private http: HttpClient) { }
-  getDoctorInformation(){
-    return this.http.get(`https://tukun-tech1.free.beeceptor.com/api/doctors`)
+  getDoctorInformation(): Observable<any>{
+    return this.http.get(this.baseUrl+'/medics')
   }
-  postDoctorInformation(doctor: Doctor){
-    return this.http.post(`https://tukun-tech1.free.beeceptor.com/api/doctors`, doctor);
+  postDoctorInformation(doctor: Doctor): Observable<any>{
+    return this.http.post(this.baseUrl, doctor);
+  }
+  putDoctor(doctor: Doctor): Observable<any>{
+    return this.http.put(this.baseUrl, doctor);
+  }
+  deleteDoctor(id: number): Observable<any>{
+    return this.http.delete(this.baseUrl+'/'+id);
   }
 
 }
