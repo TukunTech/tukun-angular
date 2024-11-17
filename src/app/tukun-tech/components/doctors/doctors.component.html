@@ -9,35 +9,40 @@
   </div>
 
   <div class="table-container">
-    <table mat-table [dataSource]="doctors" class="mat-elevation-z8">
-
-      <!-- Doctor Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
-        <td mat-cell *matCellDef="let doctor"> {{doctor.name}} </td>
-      </ng-container>
-
-      <!-- Area Column -->
-      <ng-container matColumnDef="area">
-        <th mat-header-cell *matHeaderCellDef> Area </th>
-        <td mat-cell *matCellDef="let doctor"> {{doctor.specialization}} </td>
-      </ng-container>
-
-      <!-- Contact Column -->
-      <ng-container matColumnDef="contact">
-        <th mat-header-cell *matHeaderCellDef> Contact </th>
-        <td mat-cell *matCellDef="let doctor"> {{doctor.contact}} </td>
-      </ng-container>
-
-      <!-- Professional Code Column -->
-      <ng-container matColumnDef="professionalCode">
-        <th mat-header-cell *matHeaderCellDef> Professional Code </th>
-        <td mat-cell *matCellDef="let doctor"> {{doctor.cmpCode}} </td>
-      </ng-container>
-
-      <!-- Header and Rows -->
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    <div class="row">
+      <div class="content">
+        <table id="idtable" class="table table-striped table-bordered">
+          <thead>
+          <tr>
+            <th style="width: 10%">Name</th>
+            <th style="width: 10%">Last Name</th>
+            <th style="width: 10%">DNI</th>
+            <th style="width: 10%">Age</th>
+            <th style="width: 10%">Specialization</th>
+            <th style="width: 10%">Code CMP</th>
+            <th style="width: 10%">Contact</th>
+            <th style="width: 10%">Nationality</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let x of doctors">
+            <td>{{ x.name }}</td>
+            <td>{{ x.lastName }}</td>
+            <td>{{ x.dni }}</td>
+            <td>{{ x.age }}</td>
+            <td>{{ x.specialization!.specialization }}</td>
+            <td>{{ x.codeCmp }}</td>
+            <td>{{ x.contact }}</td>
+            <td>{{ x.nationality!.nationality }}</td>
+            <td > <button type="button" (click)="deleteDoctor(x)" style="width: 125px; background-color: #f10940" class="btn btn-warning btn-sm"> Delete </button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="modal fade" id="idModalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
 </div>

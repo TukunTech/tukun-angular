@@ -32,16 +32,6 @@
         </mat-form-field>
       </div>
 
-      <!-- Gender -->
-      <div class="form-row">
-        <label for="gender">Gender:</label>
-        <mat-form-field appearance="fill">
-          <mat-select id="gender" name="gender" required>
-            <mat-option value="male">Male</mat-option>
-            <mat-option value="female">Female</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
 
       <!-- Age -->
       <div class="form-row">
@@ -55,23 +45,31 @@
       <div class="form-row">
         <label for="cmpCode">CMP Code:</label>
         <mat-form-field appearance="fill">
-          <input matInput id="cmpCode" [(ngModel)]="newDoctor.cmpCode" name="cmpCode" required />
+          <input matInput id="cmpCode" [(ngModel)]="newDoctor.codeCmp" name="cmpCode" required />
         </mat-form-field>
       </div>
 
       <!-- Nationality -->
       <div class="form-row">
-        <label for="nationality">Nationality:</label>
+        <label for="id_reg_nation">Nationality:</label>
         <mat-form-field appearance="fill">
-          <input matInput id="nationality" [(ngModel)]="newDoctor.nationality" name="nationality" required />
+          <mat-select [(ngModel)]="newDoctor.nationality!.id" id="id_reg_nation" name="name" placeholder="Select nation">
+            <mat-option *ngFor="let nat of nations" [value]="nat.id" style="color: black">
+              {{ nat.nationality }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
       <!-- Specialization -->
       <div class="form-row">
-        <label for="specialization">Specialization:</label>
+        <label for="id_specialization">Specialization:</label>
         <mat-form-field appearance="fill">
-          <input matInput id="specialization" [(ngModel)]="newDoctor.specialization" name="specialization" required />
+          <mat-select [(ngModel)]="newDoctor.specialization!.id" id="id_specialization" name="name" placeholder="Select a specialization">
+            <mat-option *ngFor="let speci of specialization" [value]="speci.id" style="color: black">
+              {{ speci.specialization }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 

@@ -31,7 +31,6 @@ import {Nationality} from "../../model/patients/nationality";
     MatSelect,
     MatOption,
     MatIcon,
-    MatLabel,
     FormsModule,
     TranslateModule,
     NgForOf
