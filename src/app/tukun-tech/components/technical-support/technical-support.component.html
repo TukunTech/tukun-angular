@@ -29,11 +29,13 @@
 
       <div class="help-item">
         <label>{{ 'technical-support.sendMessage' | translate }}</label>
-        <textarea matInput placeholder="Type your message"></textarea>
+        <textarea matInput placeholder="Type your message" [(ngModel)]="technicalSupport.message" name="message" required></textarea>
       </div>
 
       <div class="send-button">
-        <button mat-raised-button color="primary">{{ 'technical-support.buttonMessage' | translate }}</button>
+        <button mat-raised-button color="primary" (click)="addTechnicalSupport()">{{ 'technical-support.buttonMessage' | translate }}</button>
+
+
       </div>
     </mat-card>
   </div>
