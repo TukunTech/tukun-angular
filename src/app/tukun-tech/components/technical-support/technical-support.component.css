@@ -48,10 +48,7 @@ h2 {
   padding: 10px;
   border-radius: 5px 5px 0 0;
   background-color: #00bcd4;
-}
-
-.faqs-header {
-  background-color: #00bcd4;
+  margin: 10px
 }
 
 .help-header {
@@ -65,11 +62,11 @@ h2 {
 }
 
 .faq-item, .help-item {
-  padding: 8px 0;
   border-bottom: 1px solid #ccc;
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 8px;
+  padding: 3%;
 }
 
 .faq-item:last-child, .help-item:last-child {
