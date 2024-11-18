@@ -5,6 +5,8 @@ import {BloodType} from "../../model/patients/blood-type";
 import {Nationality} from "../../model/patients/nationality";
 import {Gender} from "../../model/patients/gender";
 import {Specialization} from "../../model/doctors/specialization";
+import {Status} from "../../model/pending-medicine/status";
+import {TypeAlerts} from "../../model/critical-alerts/type-alerts";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,15 @@ export class UtilService {
   getSpecialization(): Observable<Specialization[]>{
    return this.http.get<Specialization[]>(this.baseUrl+'/listSpecialization')
   }
+
+  getStatus(): Observable<Status[]>{
+    return this.http.get<Status[]>(this.baseUrl+'/listStatus')
+  }
+
+  getTypeAlerts(): Observable<TypeAlerts[]>{
+    return this.http.get<TypeAlerts[]>((this.baseUrl+'/listTypeAlert'))
+  }
+
 
 
 
