@@ -1,49 +1,50 @@
-.postoperative-container {
-  padding: 20px;
-  text-align: center;
+.main-container {
+  padding: 16px;
 }
 
-.cards-container {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px; /* Espacio entre tarjetas */
+  justify-items: center; /* Centrar elementos en la cuadrícula */
+  padding: 16px;
 }
 
 .patient-card {
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  padding: 16px;
 }
 
-.mat-card-title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.vital-sign {
+.info-row {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
-  padding: 5px;
-  background-color: #e0e0e0;
-  border-radius: 5px;
+  margin-bottom: 8px;
 }
 
-.vital-value {
+.value {
   font-weight: bold;
-  font-size: 20px;
 }
 
-.vital-value.red {
-  color: #e53935;
+.red {
+  color: red;
 }
 
-.vital-value.green {
-  color: #4caf50;
+.green {
+  color: green;
 }
 
-.vital-value.purple {
-  color: #8e24aa;
+.purple {
+  color: purple;
+}
+
+.gray {
+  color: gray;
+}
+
+.heart-icon {
+  margin-left: 4px;
+}
+
+.postoperative-container {
+  padding: 20px;
+  text-align: center;
 }

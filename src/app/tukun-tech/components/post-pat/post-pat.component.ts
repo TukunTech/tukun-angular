@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
@@ -8,33 +8,30 @@ import {MatIcon} from "@angular/material/icon";
 import {Patient} from "../../model/patients/patient.entity";
 import {PatientApiService} from "../../services/patients/patient-api.service";
 import {TranslateModule} from "@ngx-translate/core";
+import {Bed} from "../../model/patients/bed";
+import {BedService} from "../../services/patients/bed.service";
 
 @Component({
   selector: 'app-post-pat',
   standalone: true,
   imports: [
-    MatToolbar,
-    MatButton,
-    RouterLink,
+    TranslateModule,
     MatCard,
-    NgForOf,
-    MatCardHeader,
     MatCardContent,
-    MatIcon,
     MatCardTitle,
-    TranslateModule
+    NgForOf
   ],
   templateUrl: './post-pat.component.html',
   styleUrl: './post-pat.component.css'
 })
-export class PostPatComponent {
-  postPatients:  Array<Patient> = [];
-  constructor(private PatientApi: PatientApiService) { }
+export class PostPatComponent implements OnInit{
+
+  beds: Bed[] =[];
+  constructor(private bedService: BedService) { }
   getPostPatientsInfo(){
-    this.PatientApi.getPatient().subscribe((data: any) => {
-      console.log(data);
-      this.postPatients = data;
-    })
+    this.bedService.getBed().subscribe(
+      x=>this.beds = x
+    )
   }
   ngOnInit() {
     this.getPostPatientsInfo();
