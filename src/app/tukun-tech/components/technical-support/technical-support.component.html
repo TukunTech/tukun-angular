@@ -7,13 +7,14 @@
 
   <div class="cards-container">
     <mat-card class="section-card faqs">
-      <div class="section-header faqs-header">
+      <div class="section-header">
         <span class="section-title">{{ 'technical-support.questions' | translate }}</span>
       </div>
 
-      <div class="faq-item" *ngFor="let faq of faqs">
-        {{ faq }}
+      <div class="faq-item" *ngFor="let item of technicalSupports">
+        {{ item.message || 'Propiedad no encontrada' }}
       </div>
+
     </mat-card>
 
     <mat-card class="section-card request-help">
