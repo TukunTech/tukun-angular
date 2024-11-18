@@ -184,9 +184,12 @@
   "postPatients": {
     "title": "Pacientes Postoperatorios",
     "bed": "Cama"
+  },
+
+  "icuPatients": {
+    "title": "Pacientes UCI",
+    "bed": "Cama"
   }
-
-
 
 
 

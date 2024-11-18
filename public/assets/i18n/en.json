@@ -132,6 +132,11 @@
   "postPatients": {
     "title": "Postoperative Patients",
     "bed": "Bed"
+  },
+
+  "icuPatients": {
+    "title": "ICU Patients",
+    "bed": "Bed"
   }
 
 
