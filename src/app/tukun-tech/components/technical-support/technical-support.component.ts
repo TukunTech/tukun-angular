@@ -7,8 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {TechnicalSupport} from "../../model/technicalSupport/technical-support";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormsModule} from "@angular/forms";
 import {TechnicalSupportService} from "../../services/technicalSupport/technical-support.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-technical-support',
@@ -21,7 +22,8 @@ import {TechnicalSupportService} from "../../services/technicalSupport/technical
     MatCardModule,
     RouterLink,
     TranslateModule,
-    NgForOf
+    NgForOf,
+    FormsModule
   ],
   templateUrl: './technical-support.component.html',
   styleUrl: './technical-support.component.css'
@@ -29,6 +31,24 @@ import {TechnicalSupportService} from "../../services/technicalSupport/technical
 export class TechnicalSupportComponent implements OnInit{
   technicalSupports: Array<TechnicalSupport> = [];
   supportNumber = 948129421;
+
+  technicalSupport: TechnicalSupport = {
+    id: 0,
+    message: ""
+  }
+
+  addTechnicalSupport(){
+    this.technicalApi.postTechnicalSupport(this.technicalSupport).subscribe(res=>{
+      document.getElementById("btn_reg_cerrar")?.click();
+      Swal.fire('Mensaje', res.mensaje, 'success');
+    }) ;
+
+    this.technicalSupport = {
+      id: 0,
+      message: ""
+    }
+
+  }
 
   constructor(private technicalApi: TechnicalSupportService) {}
 
