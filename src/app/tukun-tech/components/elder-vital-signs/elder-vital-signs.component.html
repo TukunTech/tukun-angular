@@ -35,11 +35,10 @@
     </div>
 
     <!-- Panel de alertas -->
-    <div class="panel alerts" *ngIf="elderbeds.length === 0">
+    <div class="panel alerts" *ngFor="let item of criticalAlerts">
       <h2>Alerts</h2>
       <div class="alert-item no-alerts">
-        <mat-icon class="alert-icon">warning</mat-icon>
-        <span>No alerts</span>
+        {{item.typeAlert?.message}}
       </div>
     </div>
   </div>
