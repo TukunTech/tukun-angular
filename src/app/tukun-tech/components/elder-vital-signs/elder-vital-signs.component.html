@@ -35,8 +35,9 @@
     </div>
 
     <!-- Panel de alertas -->
+
+    <h2>Alerts</h2>
     <div class="panel alerts" *ngFor="let item of criticalAlerts">
-      <h2>Alerts</h2>
       <div class="alert-item no-alerts">
         {{item.typeAlert?.message}}
       </div>
