@@ -16,5 +16,7 @@ export class PendingMedicineService {
     return this.http.get(this.baseUrl+'/pendingMedicines')
   }
 
-
+  deleteMedicine(id: number): Observable<any>{
+    return this.http.delete(this.baseUrl+'/'+id);
+  }
 }
