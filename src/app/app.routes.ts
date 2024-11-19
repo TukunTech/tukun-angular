@@ -31,7 +31,7 @@ export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
-  { path: 'create-account', component: CreateAccountComponent, canActivate: [AuthGuard] },
+  { path: 'create-account', component: CreateAccountComponent },
   { path: 'login-elder', component: LoginElderComponent, canActivate: [AuthGuard] },
   { path: 'create-elder', component: CreateAccountElderComponent , canActivate: [AuthGuard]},
 
