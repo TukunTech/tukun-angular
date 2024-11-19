@@ -84,3 +84,82 @@ label {
   text-align: left;
   margin-bottom: 15px;
 }
+/* Estilo general del contenedor principal */
+.profile-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Fondo claro */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Estilo para el encabezado */
+.profile-form-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Color del texto */
+}
+
+/* Estilo del formulario */
+.profile-form {
+  width: 100%;
+}
+
+/* Fila del formulario */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Etiquetas */
+.form-row label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555; /* Color del texto */
+}
+
+/* Estilo para los campos del formulario */
+mat-form-field {
+  width: 100%;
+}
+
+/* Botón de guardar */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  background-color: #0099b2 !important; /* Color principal */
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 600px) {
+  .profile-form-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .form-row {
+    margin-bottom: 10px;
+  }
+
+  .form-actions button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+

@@ -1,77 +1,103 @@
-<div class="container">
-  <button mat-stroked-button class="back-button" routerLink="/elder/home">
-    <mat-icon>arrow_back</mat-icon> Return
+<mat-toolbar>
+  <button mat-button routerLink="/elder/home">
+    <mat-icon>arrow_back</mat-icon> {{ 'elder-profile.buttonReturn' | translate }}
   </button>
+</mat-toolbar>
 
-  <div class="profile-details">
-    <h2>Profile of Older Adults</h2>
+<div class="profile-form-container">
+  <h1>{{ 'elder-profile.title' | translate }}</h1>
 
-    <div class="info-section">
-      <label>Name:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
+  <div class="profile-form">
+    <form (ngSubmit)="registerElderProfile()">
 
-    <div class="info-section">
-      <label>Last Name:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>DNI:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Gender:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Age:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Group Blood:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Nationality:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Policy No.:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Sure:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <div class="info-section">
-      <label>Allergies:</label>
-      <div class="info-box" contenteditable="true"></div>
-    </div>
-
-    <button mat-stroked-button class="update-button" color="primary">Update</button>
-  </div>
-
-  <div class="medication-section">
-    <h3>Medicine:</h3>
-
-    <div class="medications-list">
-      <div *ngFor="let med of medications; let i = index">
-        <div class="medication-item">
-          {{med.name}}
-          <button mat-stroked-button (click)="editMedication(i)">Edit</button>
-          <button mat-stroked-button color="warn" (click)="deleteMedication(i)">Delete</button>
-        </div>
+      <div class="form-row">
+        <label for="name">{{ 'elder-profile.name' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="name" [(ngModel)]="elder.name" name="name" required />
+        </mat-form-field>
       </div>
-    </div>
 
-    <button mat-stroked-button class="add-drugs-button" (click)="addMedication()">Add Drugs</button>
+      <div class="form-row">
+        <label for="lastName">{{ 'elder-profile.lastName' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="lastName" [(ngModel)]="elder.lastName" name="lastName" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label for="dni">{{ 'elder-profile.DNI' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <input matInput id="dni" [(ngModel)]="elder.dni" name="dni" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label for="id_reg_gender">{{ 'elder-profile.gender' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="elder.gender.id" id="id_reg_gender" name="gender" placeholder="Select gender">
+            <mat-option *ngFor="let gen of genders" [value]="gen.id">
+              {{ gen.gender }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label for="id_reg_blood">{{ 'elder-profile.bloodType' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="elder.bloodType.id" id="id_reg_blood" name="bloodType" placeholder="Select blood type">
+            <mat-option *ngFor="let blo of bloods" [value]="blo.id">
+              {{ blo.type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label for="id_reg_nation">{{ 'elder-profile.nationality' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="elder.nationality.id" id="id_reg_nation" name="nationality" placeholder="Select nationality">
+            <mat-option *ngFor="let nat of nations" [value]="nat.id">
+              {{ nat.nationality }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label for="age">{{ 'elder-profile.age' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <input matInput type="number" id="age" [(ngModel)]="elder.age" name="age" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Medical Insurance Field -->
+      <div class="form-row">
+        <label for="id_medicalInsurance">{{ 'elder-profile.medicalInsurance' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="elder.medicalInsurance.id" id="id_medicalInsurance" name="medicalInsurance" placeholder="Select insurance">
+            <mat-option *ngFor="let med of medicalInsurances" [value]="med.id">
+              {{ med.medical }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Allergy Field -->
+      <div class="form-row">
+        <label for="id_allergy">{{ 'elder-profile.allergy' | translate }}:</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="elder.allergy.id" id="id_allergy" name="allergy" placeholder="Select allergy">
+            <mat-option *ngFor="let all of allergies" [value]="all.id">
+              {{ all.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-actions">
+        <button mat-button color="primary" type="submit">{{ 'elder-profile.buttonSave' | translate }}</button>
+      </div>
+    </form>
   </div>
 </div>
