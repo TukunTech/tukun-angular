@@ -37,8 +37,8 @@
                 <td > {{x.bloodType!.type}} </td>
                 <td > {{ x.nationality!.nationality }} </td>
                 <td > {{x.gender!.gender}} </td>
-                <td > <button type="button" (click)="buscar(x)" style="width: 125px" class="btn btn-warning btn-sm"  data-bs-toggle="modal" data-bs-target="#idModalActualizar"> Edit </button></td>
-                <td > <button type="button" (click)="eliminar(x)" style="width: 125px; background-color: #f10940" class="btn btn-warning btn-sm"> Delete </button></td>
+                <td > <button type="button" (click)="buscar(x)" style="width: 125px" class="btn btn-warning btn-sm"  data-bs-toggle="modal" data-bs-target="#idModalActualizar"> {{ 'patient-registration.edit' | translate  }} </button></td>
+                <td > <button type="button" (click)="eliminar(x)" style="width: 125px; background-color: #f10940" class="btn btn-warning btn-sm"> {{ 'patient-registration.delete' | translate  }} </button></td>
 
               </tr>
 
@@ -97,8 +97,8 @@
 
       <!-- Modal Footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" (click)="actualizar()" class="btn btn-primary">Guardar Cambios</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'patient-registration.close' | translate  }}</button>
+        <button type="button" (click)="actualizar()" class="btn btn-primary">{{ 'patient-registration.buttonSave' | translate  }}</button>
       </div>
     </div>
   </div>

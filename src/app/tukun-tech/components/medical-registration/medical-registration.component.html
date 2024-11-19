@@ -5,12 +5,12 @@
 </mat-toolbar>
 
 <div class="registration-form-container">
-  <h1>Doctor/Nurse Registration</h1>
+  <h1>{{ 'doctors-registration.title' | translate  }}</h1>
   <div class="registration-form">
     <form (ngSubmit)="addDoctor()">
       <!-- Name -->
       <div class="form-row">
-        <label for="name">Name:</label>
+        <label for="name">{{ 'doctors-registration.name' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput id="name" [(ngModel)]="newDoctor.name" name="name" required />
         </mat-form-field>
@@ -18,7 +18,7 @@
 
       <!-- Last Name -->
       <div class="form-row">
-        <label for="lastName">Last name:</label>
+        <label for="lastName">{{ 'doctors-registration.lastName' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput id="lastName" [(ngModel)]="newDoctor.lastName" name="lastName" required />
         </mat-form-field>
@@ -26,7 +26,7 @@
 
       <!-- DNI -->
       <div class="form-row">
-        <label for="dni">DNI:</label>
+        <label for="dni">{{ 'doctors-registration.DNI' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput id="dni" [(ngModel)]="newDoctor.dni" name="dni" required />
         </mat-form-field>
@@ -35,7 +35,7 @@
 
       <!-- Age -->
       <div class="form-row">
-        <label for="age">Age:</label>
+        <label for="age">{{ 'doctors-registration.age' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput type="number" id="age" [(ngModel)]="newDoctor.age" name="age" required />
         </mat-form-field>
@@ -43,7 +43,7 @@
 
       <!-- CMP Code -->
       <div class="form-row">
-        <label for="cmpCode">CMP Code:</label>
+        <label for="cmpCode">{{ 'doctors-registration.codeCMP' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput id="cmpCode" [(ngModel)]="newDoctor.codeCmp" name="cmpCode" required />
         </mat-form-field>
@@ -51,7 +51,7 @@
 
       <!-- Nationality -->
       <div class="form-row">
-        <label for="id_reg_nation">Nationality:</label>
+        <label for="id_reg_nation">{{ 'doctors-registration.nationality' | translate  }}</label>
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="newDoctor.nationality!.id" id="id_reg_nation" name="name" placeholder="Select nation">
             <mat-option *ngFor="let nat of nations" [value]="nat.id" style="color: black">
@@ -63,7 +63,7 @@
 
       <!-- Specialization -->
       <div class="form-row">
-        <label for="id_specialization">Specialization:</label>
+        <label for="id_specialization">{{ 'doctors-registration.specialization' | translate  }}</label>
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="newDoctor.specialization!.id" id="id_specialization" name="name" placeholder="Select a specialization">
             <mat-option *ngFor="let speci of specialization" [value]="speci.id" style="color: black">
@@ -75,7 +75,7 @@
 
       <!-- Contact -->
       <div class="form-row">
-        <label for="contact">Contact:</label>
+        <label for="contact">{{ 'doctors-registration.contact' | translate  }}</label>
         <mat-form-field appearance="fill">
           <input matInput id="contact" [(ngModel)]="newDoctor.contact" name="contact" required />
         </mat-form-field>
@@ -83,7 +83,7 @@
 
       <!-- Submit Button -->
       <div class="form-actions">
-        <button mat-button color="primary" type="submit">Save</button>
+        <button mat-button color="primary" type="submit">{{ 'doctors-registration.save' | translate  }}</button>
       </div>
     </form>
   </div>
