@@ -4,7 +4,7 @@ import {Doctor} from "../../model/doctors/doctor.entity";
 import {PendingMedicine} from "../../model/pending-medicine/pending-medicine";
 
 export class PendingMedicineService {
-  baseUrl = 'http://localhost:8080/pendingMedicine/v1';
+  baseUrl = 'http://localhost:8080/api/v1/pendingMedicine';
 
   constructor(private http: HttpClient) { }
 
