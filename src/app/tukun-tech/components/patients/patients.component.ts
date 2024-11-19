@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {Gender} from "../../model/patients/gender";
 import {BloodType} from "../../model/patients/blood-type";
 import {Nationality} from "../../model/patients/nationality";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-patients',
@@ -19,7 +20,8 @@ import {Nationality} from "../../model/patients/nationality";
     MatIcon,
     MatTable,
     NgForOf,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './patients.component.html',
   styleUrl: './patients.component.css'
@@ -31,59 +33,58 @@ export class PatientsComponent implements OnInit {
 
   patients: Patient[] = [];
   patient: Patient = {
-    id : 0,
+    id: 0,
     name: "",
     lastName: "",
     dni: "",
     age: 0,
     bloodType: {
-      id : -1,
-      type : "-1",
+      id: -1,
+      type: "-1",
     },
     nationality: {
-      id : -1,
-      nationality : "-1",
+      id: -1,
+      nationality: "-1",
     },
     gender: {
-      id : -1,
-      gender : "-1",
+      id: -1,
+      gender: "-1",
     }
   }
-  genders : Gender[] = [];
-  bloods : BloodType[] = [];
-  nations : Nationality[] = [];
+  genders: Gender[] = [];
+  bloods: BloodType[] = [];
+  nations: Nationality[] = [];
 
-  constructor(private patientsservice: PatientApiService) {
+  constructor(private patientsservice: PatientApiService, private router: Router) {
   }
+
   ngOnInit() {
     this.consulta();
   }
 
-  consulta(){
-    this.patientsservice.getPatient().subscribe(x => this.patients=x);
+  consulta() {
+    this.patientsservice.getPatient().subscribe(x => this.patients = x);
   }
 
-  buscar(obj:Patient){
-   this.patient=obj;
-   console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+  buscar(obj: Patient) {
+    this.patient = obj;
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
   }
 
 
-  actualizar(){
+  actualizar() {
     this.patientsservice.putPatient(this.patient).subscribe(
-      x=>{
+      x => {
         Swal.fire('actualizado', x.message, 'info');
         this.patientsservice.getPatient().subscribe(
-          x=>this.patients=x
+          x => this.patients = x
         );
       });
 
   }
 
 
-
-
-  eliminar(obj:Patient){
+  eliminar(obj: Patient) {
     Swal.fire({
       title: '¿Desea eliminar?',
       text: "Los cambios no se van a revertir",
@@ -97,8 +98,8 @@ export class PatientsComponent implements OnInit {
       if (result.isConfirmed) {
 
         this.patientsservice.deletePatient(obj.id || 0).subscribe(
-          x  =>  {
-            Swal.fire('Registro eliminado',x.mensaje,'success');
+          x => {
+            Swal.fire('Registro eliminado', x.mensaje, 'success');
             this.patientsservice.getPatient().subscribe(
               x => this.patients = x
             );
@@ -107,6 +108,15 @@ export class PatientsComponent implements OnInit {
 
       }
     })
+  }
+
+  verHistorial(paciente: Patient) {
+    const pacienteId = paciente.id;
+    if (pacienteId) {
+      this.router.navigate(['/historial', pacienteId]);
+    } else {
+      Swal.fire('Error', 'No se pudo encontrar el ID del paciente.', 'error');
+    }
   }
 
 }
