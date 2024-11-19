@@ -247,5 +247,22 @@
     "contact": "Contacto",
     "nationality": "Nacionalidad",
     "save" : "Guardar"
+  },
+  "ElderVitalSigns": {
+    "PANEL_TITLE": "Panel de Signos Vitales",
+    "HR": "Frecuencia Cardíaca",
+    "NIPB": "Presión Arterial No Invasiva",
+    "SPO2": "Saturación de Oxígeno",
+    "TEMP": "Temperatura",
+    "ALERTS_TITLE": "Alertas"
+  },
+  "ElderHome": {
+    "WELCOME": "Bienvenido",
+    "START_PROMPT": "¿Dónde quieres empezar?",
+    "VITAL_SIGNS": "Signos Vitales",
+    "PROFILE": "Perfil del Adulto Mayor",
+    "EMERGENCY_NUMBERS": "Números de Emergencia",
+    "REMINDERS": "Recordatorios",
+    "TECH_SUPPORT": "Soporte Técnico"
   }
 }

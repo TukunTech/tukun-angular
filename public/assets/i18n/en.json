@@ -196,5 +196,22 @@
     "contact": "Contact",
     "nationality": "Nationality",
     "save" : "Save"
+  },
+  "ElderVitalSigns": {
+    "PANEL_TITLE": "Vital Signs Panel",
+    "HR": "HR",
+    "NIPB": "NIPB",
+    "SPO2": "SpO2",
+    "TEMP": "Temperature",
+    "ALERTS_TITLE": "Alerts"
+  },
+  "ElderHome": {
+    "WELCOME": "Welcome",
+    "START_PROMPT": "Where do you want to start?",
+    "VITAL_SIGNS": "Vital Signs",
+    "PROFILE": "Older Adult Profile",
+    "EMERGENCY_NUMBERS": "Emergency Numbers",
+    "REMINDERS": "Reminders",
+    "TECH_SUPPORT": "Technical Support"
   }
 }
