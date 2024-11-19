@@ -18,6 +18,7 @@ import {Nationality} from "../../model/patients/nationality";
 import {Specialization} from "../../model/doctors/specialization";
 import Swal from "sweetalert2";
 import {NgForOf} from "@angular/common";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-doctors',
@@ -26,7 +27,8 @@ import {NgForOf} from "@angular/common";
     MatInput,
     MatIconButton,
     MatIcon,
-    NgForOf
+    NgForOf,
+    TranslateModule
   ],
   templateUrl: './doctors.component.html',
   styleUrl: './doctors.component.css'
