@@ -6,6 +6,8 @@ import { ElderBedService } from "../../services/elders/elderbed.service";
 import { TranslateModule } from "@ngx-translate/core";
 import { ElderBed } from "../../model/elders/elderbed";
 import { MatIcon } from "@angular/material/icon";
+import {CriticalAlerts} from "../../model/critical-alerts/critical-alerts";
+import {CriticalAlertsService} from "../../services/critical-alerts/critical-alerts.service";
 
 @Component({
   selector: 'app-elder-vital-signs',
@@ -23,12 +25,22 @@ import { MatIcon } from "@angular/material/icon";
   styleUrls: ['./elder-vital-signs.component.css']
 })
 export class ElderVitalSignsComponent implements OnInit {
-  elderbeds: ElderBed[] = []; // Almacenará los datos
+  elderbeds: ElderBed[] = [];
+  criticalAlerts: CriticalAlerts[] = [];
+  criticalAlert =  {
+    id: 0,
+    typeAlert: {
+      id: 0,
+      message: ""
+    },
+    type: 0
+  }
 
-  constructor(private elderBedService: ElderBedService) {}
+  constructor(private criticalAlertsService: CriticalAlertsService ,private elderBedService: ElderBedService) {}
 
   ngOnInit(): void {
     this.consultaelder();
+    this.getCriticalAlerts();
   }
 
   consultaelder() {
@@ -37,5 +49,11 @@ export class ElderVitalSignsComponent implements OnInit {
     )
   }
 
+
+  getCriticalAlerts(){
+    this.criticalAlertsService.getCriticalAlerts().subscribe(
+      el => this.criticalAlerts = el
+    )
+  }
 
 }
