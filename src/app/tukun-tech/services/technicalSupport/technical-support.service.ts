@@ -7,7 +7,7 @@ import {TechnicalSupport} from "../../model/technicalSupport/technical-support";
   providedIn: 'root'
 })
 export class TechnicalSupportService {
-  baseUrl = 'http://localhost:8080/soporte/v1';
+  baseUrl = 'http://localhost:8080/api/v1/soporte';
 
   constructor(private http: HttpClient) {}
 
