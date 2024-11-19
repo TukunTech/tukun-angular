@@ -7,6 +7,8 @@ import {Gender} from "../../model/patients/gender";
 import {Specialization} from "../../model/doctors/specialization";
 import {Status} from "../../model/pending-medicine/status";
 import {TypeAlerts} from "../../model/critical-alerts/type-alerts";
+import {Allergy} from "../../model/elders/allergy";
+import {Medicalinsurance} from "../../model/elders/medicalinsurance";
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +43,12 @@ export class UtilService {
     return this.http.get<TypeAlerts[]>((this.baseUrl+'/listTypeAlert'))
   }
 
-
+  getAllergy(): Observable<Allergy[]>{
+    return this.http.get<Allergy[]>(this.baseUrl+'/listAllergy')
+  }
+  getMedicalInsurance(): Observable<Medicalinsurance[]>{
+    return this.http.get<Medicalinsurance[]>(this.baseUrl+'/listMedicalInsurance')
+  }
 
 
 }
