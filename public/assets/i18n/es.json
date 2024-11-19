@@ -8,6 +8,16 @@
     "sendMessage" : "Enviar mensaje",
     "buttonMessage": "Enviar"
   },
+
+  "emergency-numbers": {
+    "title": "Números de Emergencia",
+    "added": "Números de Emergencia Agregados",
+    "add": "Agregar un Número de Emergencia",
+    "number": "Número de telefono",
+    "contactName" : "Número de contacto",
+    "buttonAdd": "Añadir"
+  },
+
   "patient-registration": {
     "title": "Registro Paciente",
     "name": "Nombres",
