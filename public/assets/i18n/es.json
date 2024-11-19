@@ -189,8 +189,21 @@
   "icuPatients": {
     "title": "Pacientes UCI",
     "bed": "Cama"
+  },
+  "elder-profile": {
+    "buttonReturn": "Regresar",
+    "title": "Perfil del Adulto Mayor",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "DNI": "DNI",
+    "gender": "Género",
+    "bloodType": "Tipo de Sangre",
+    "nationality": "Nacionalidad",
+    "age": "Edad",
+    "medicalInsurance": "Seguro Médico",
+    "allergy": "Alergias",
+    "buttonSave": "Guardar"
   }
-
 
 
 }

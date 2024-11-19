@@ -137,6 +137,20 @@
   "icuPatients": {
     "title": "ICU Patients",
     "bed": "Bed"
+  },
+  "elder-profile": {
+    "buttonReturn": "Return",
+    "title": "Elder Profile",
+    "name": "Name",
+    "lastName": "Last Name",
+    "DNI": "DNI",
+    "gender": "Gender",
+    "bloodType": "Blood Type",
+    "nationality": "Nationality",
+    "age": "Age",
+    "medicalInsurance": "Medical Insurance",
+    "allergy": "Allergies",
+    "buttonSave": "Save"
   }
 
 
