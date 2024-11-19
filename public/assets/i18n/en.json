@@ -7,6 +7,16 @@
     "sendMessage" : "Send Message",
     "buttonMessage": "Send"
   },
+
+  "emergency-numbers": {
+    "title": "Emergency Numbers",
+    "added": "Added Emergency Numbers",
+    "add": "Add an Emergency Number",
+    "number": "Phone Number",
+    "contactName" : "Contact Name",
+    "buttonAdd": "Add"
+  },
+
   "patient-registration": {
     "title": "Patient Registration",
     "name": "Name",
