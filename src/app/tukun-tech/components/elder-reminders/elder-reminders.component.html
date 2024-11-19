@@ -11,9 +11,9 @@
       <span class="section-title">Pending Medications</span>
     </div>
 
-    <div class="medication-item" *ngFor="let medication of pendingMedications">
+    <div class="medication-item" *ngFor="let medication of pendingMedicines">
       <div class="medication-info">
-        {{medication.name}} <span>Take at {{medication.time}}</span>
+        {{medication.medicineName}} <span>Take at {{medication.timeToTake}}</span>
       </div>
       <button mat-raised-button color="primary">Ready</button>
     </div>
@@ -23,12 +23,13 @@
     <div class="section-header taken-header">
       <span class="section-title">Medications Taken</span>
     </div>
-
+<!--
     <div class="medication-item" *ngFor="let medication of takenMedications">
       <div class="medication-info">
         {{medication.name}} <span>Take at {{medication.time}}</span>
       </div>
       <button mat-raised-button color="accent">{{medication.status}}</button>
     </div>
+    -->
   </mat-card>
 </div>
