@@ -110,13 +110,4 @@ export class PatientsComponent implements OnInit {
     })
   }
 
-  verHistorial(paciente: Patient) {
-    const pacienteId = paciente.id;
-    if (pacienteId) {
-      this.router.navigate(['/historial', pacienteId]);
-    } else {
-      Swal.fire('Error', 'No se pudo encontrar el ID del paciente.', 'error');
-    }
-  }
-
 }
