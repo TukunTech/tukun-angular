@@ -33,7 +33,7 @@ export const appRoutes: Routes = [
   { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login-elder', component: LoginElderComponent, canActivate: [AuthGuard] },
-  { path: 'create-elder', component: CreateAccountElderComponent , canActivate: [AuthGuard]},
+  { path: 'create-elder', component: CreateAccountElderComponent},
 
   { path: 'patients', component: PatientsComponent, canActivate: [AuthGuard] },
   { path: 'patients/registration', component: PatientRegistrationComponent, canActivate: [AuthGuard] },
