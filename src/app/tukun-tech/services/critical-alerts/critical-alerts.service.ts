@@ -11,7 +11,6 @@ export class CriticalAlertsService {
 
   constructor(private http: HttpClient) { }
   getCriticalAlerts(): Observable<any>{
-    return this.http.get(this.baseUrl+'/criticalAlerts')
+    return this.http.get(this.baseUrl + '/criticalAlerts')
   }
-
 }
