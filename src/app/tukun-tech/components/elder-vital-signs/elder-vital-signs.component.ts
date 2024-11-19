@@ -14,7 +14,6 @@ import { MatIcon } from "@angular/material/icon";
     CommonModule,
     MatCard,
     MatCardContent,
-    MatCardHeader,
     MatCardTitle,
     NgForOf,
     TranslateModule,
