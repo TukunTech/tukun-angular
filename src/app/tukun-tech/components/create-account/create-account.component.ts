@@ -1,10 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
+import {AuthEntity} from "../../model/authentication/auth.entity";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-create-account',
@@ -17,28 +20,44 @@ import {TranslateModule} from "@ngx-translate/core";
     RouterLink,
     MatLabel,
     TranslateModule,
+    FormsModule,
   ],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
 })
 export class CreateAccountComponent implements OnInit {
-  createForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    // Inicializa el formulario sin validaciones
-    this.createForm = this.fb.group({
-      name: [''],
-      ruc: [''],
-      email: [''],
-      number: [''],
-      city: [''],
-      password: ['']
-    });
+  users: AuthEntity[] = [];
+  user: AuthEntity = {
+
+    id: 0,
+    username: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    email: ""
   }
 
-  ngOnInit() {}
+  constructor(private authService: AuthenticationService) {
+  }
 
-  onSubmit() {
-    console.log(this.createForm.value); // Maneja el envío del formulario
+  ngOnInit(): void {
+    console.log(this.users)
+  }
+
+  register() {
+    this.authService.postRegister(this.user).subscribe(x => {
+      document.getElementById("btn_reg_cerrar")?.click();
+      Swal.fire('Mensaje', x.mensaje, 'success');
+    }
+    );
+    this.user ={
+      id: 0,
+      username: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      email: ""
+    }
   }
 }

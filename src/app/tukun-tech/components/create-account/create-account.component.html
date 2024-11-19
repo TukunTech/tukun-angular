@@ -27,42 +27,50 @@
       <a class="text-clinics" >{{ 'CreateAccountClinics.clinics' | translate}} </a>
     </div>
 
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="register()">
       <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.companyName' | translate}}</mat-label>
-        <input matInput formControlName="name" placeholder="Company Name">
+        <mat-label>User</mat-label>
+        <mat-form-field appearance="fill">
+          <input matInput id="username" [(ngModel)]="user.username" name="name" required placeholder="Username"/>
+        </mat-form-field>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.ruc' | translate}}</mat-label>
-        <input matInput formControlName="ruc" placeholder="ruc">
+        <mat-label>Password</mat-label>
+        <mat-form-field appearance="fill">
+          <input matInput id="password" [(ngModel)]="user.password" name="name" required placeholder="Password"/>
+        </mat-form-field>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.email' | translate}}</mat-label>
-        <input matInput formControlName="email" placeholder="Company email">
+        <mat-label>First Name</mat-label>
+        <mat-form-field appearance="fill">
+          <input matInput id="firstName" [(ngModel)]="user.firstName" name="name" required placeholder="First Name"/>
+        </mat-form-field>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.number' | translate}}</mat-label>
-        <input matInput formControlName="number" placeholder="Company phone number">
+        <mat-label>Last Name</mat-label>
+        <mat-form-field appearance="fill">
+          <input matInput id="lastName" [(ngModel)]="user.lastName" name="name" required placeholder="Last Name"/>
+        </mat-form-field>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.city' | translate}}</mat-label>
-        <input matInput formControlName="city" placeholder="City">
+        <mat-label>Email</mat-label>
+        <mat-form-field appearance="fill">
+          <input matInput id="email" [(ngModel)]="user.email" name="name" required placeholder="Email"/>
+        </mat-form-field>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>{{ 'CreateAccountClinics.password' | translate}}</mat-label>
-        <input matInput formControlName="password" placeholder="Password" type="password">
-      </mat-form-field>
+      <!-- Boton create-->
+      <div class="button-create">
+        <button mat-button color="primary" type="submit">Create</button>
+      </div>
+
     </form>
 
-    <!-- Boton create-->
-    <div class="button-create">
-      <button mat-raised-button class="button-create" routerLink="/home">{{ 'CreateAccountClinics.create' | translate}}</button>
-    </div>
+
 
     <!-- Texto y boton alredy account -->
     <div class="login-account">
