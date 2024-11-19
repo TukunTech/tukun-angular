@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header">
+    <h1>Vital Signs Panel</h1>
+  </div>
+
+  <div class="content">
+    <div class="main-container">
+      <div class="grid-container">
+        <ng-container *ngFor="let elder of elderbeds">
+          <mat-card class="elder-card">
+            <mat-card-title>
+              <span>{{ elder.elder.name }} {{ elder.elder.lastName }}</span>
+            </mat-card-title>
+            <mat-card-content>
+              <div class="info-row">
+                <span>HR</span>
+                <span class="value red">{{ elder.hrBpm }} <i class="heart-icon">❤</i></span>
+              </div>
+              <div class="info-row">
+                <span>NIPB</span>
+                <span class="value green">{{ elder.systolic }} / {{ elder.dia }}</span>
+              </div>
+              <div class="info-row">
+                <span>SpO2</span>
+                <span class="value purple">{{ elder.spo2 }}</span>
+              </div>
+              <div class="info-row">
+                <span>Temp</span>
+                <span class="value gray">{{ elder.temperature }}°C</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Panel de alertas -->
+    <div class="panel alerts" *ngIf="elderbeds.length === 0">
+      <h2>Alerts</h2>
+      <div class="alert-item no-alerts">
+        <mat-icon class="alert-icon">warning</mat-icon>
+        <span>No alerts</span>
+      </div>
+    </div>
+  </div>
+</div>
