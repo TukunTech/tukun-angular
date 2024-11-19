@@ -35,14 +35,6 @@ export class UtilService {
    return this.http.get<Specialization[]>(this.baseUrl+'/listSpecialization')
   }
 
-  getStatus(): Observable<Status[]>{
-    return this.http.get<Status[]>(this.baseUrl+'/listStatus')
-  }
-
-  getTypeAlerts(): Observable<TypeAlerts[]>{
-    return this.http.get<TypeAlerts[]>((this.baseUrl+'/listTypeAlert'))
-  }
-
   getAllergy(): Observable<Allergy[]>{
     return this.http.get<Allergy[]>(this.baseUrl+'/listAllergy')
   }
