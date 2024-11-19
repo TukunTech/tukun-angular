@@ -4,9 +4,10 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
-import {HttpClient, provideHttpClient} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, provideHttpClient} from "@angular/common/http";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {AppComponent} from "./app.component";
+import {AuthInterceptor} from "./tukun-tech/services/authentication/auth.interceptor";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,6 +26,13 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    ), provideAnimationsAsync()
+    ), provideAnimationsAsync(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+
+
   ],
 };

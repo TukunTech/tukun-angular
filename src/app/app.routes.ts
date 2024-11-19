@@ -25,36 +25,37 @@ import {CreateAccountElderComponent} from "./tukun-tech/components/create-accoun
 import {LoginElderComponent} from "./tukun-tech/components/login-elder/login-elder.component";
 import {ElderVitalSignsComponent} from "./tukun-tech/components/elder-vital-signs/elder-vital-signs.component";
 import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
+import {AuthGuard} from "./tukun-tech/services/authentication/auth.guard";
 
 export const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'create-account', component: CreateAccountComponent },
-  { path: 'login-elder', component: LoginElderComponent },
-  { path: 'create-elder', component: CreateAccountElderComponent },
+  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
+  { path: 'create-account', component: CreateAccountComponent, canActivate: [AuthGuard] },
+  { path: 'login-elder', component: LoginElderComponent, canActivate: [AuthGuard] },
+  { path: 'create-elder', component: CreateAccountElderComponent , canActivate: [AuthGuard]},
 
-  { path: 'patients', component: PatientsComponent },
-  { path: 'patients/registration', component: PatientRegistrationComponent },
+  { path: 'patients', component: PatientsComponent, canActivate: [AuthGuard] },
+  { path: 'patients/registration', component: PatientRegistrationComponent, canActivate: [AuthGuard] },
 
-  { path: 'doctors', component: DoctorsComponent },
-  { path: 'doctors/registration', component: MedicalRegistrationComponent },
+  { path: 'doctors', component: DoctorsComponent, canActivate: [AuthGuard] },
+  { path: 'doctors/registration', component: MedicalRegistrationComponent , canActivate: [AuthGuard]},
 
-  { path: 'appointments', component: AppointmentsComponent },
-  { path: 'appointments/schedule', component: ScheduleAppointmentsComponent },
-  { path: 'appointments/reschedule', component: ResheduleAppointmentsComponent },
-  { path: 'appointments/update', component: UpdateAppointmentsComponent },
+  { path: 'appointments', component: AppointmentsComponent , canActivate: [AuthGuard]},
+  { path: 'appointments/schedule', component: ScheduleAppointmentsComponent , canActivate: [AuthGuard]},
+  { path: 'appointments/reschedule', component: ResheduleAppointmentsComponent, canActivate: [AuthGuard] },
+  { path: 'appointments/update', component: UpdateAppointmentsComponent, canActivate: [AuthGuard] },
 
-  { path: 'postoperative', component: PostPatComponent },
-  { path: 'icu', component: IcuPatComponent },
+  { path: 'postoperative', component: PostPatComponent , canActivate: [AuthGuard]},
+  { path: 'icu', component: IcuPatComponent, canActivate: [AuthGuard] },
 
-  { path: 'elder/home', component: HomeElderComponent },
-  { path: 'elder/profile', component: ElderProfileComponent },
-  { path: 'elder/reminders', component: ElderRemindersComponent },
-  { path: 'elder/vital-signs', component: ElderVitalSignsComponent },
+  { path: 'elder/home', component: HomeElderComponent, canActivate: [AuthGuard] },
+  { path: 'elder/profile', component: ElderProfileComponent , canActivate: [AuthGuard]},
+  { path: 'elder/reminders', component: ElderRemindersComponent , canActivate: [AuthGuard]},
+  { path: 'elder/vital-signs', component: ElderVitalSignsComponent , canActivate: [AuthGuard]},
 
-  { path: 'support/technical', component: TechnicalSupportComponent },
-  { path: 'support/emergency-numbers', component: EmergencyNumbersComponent },
+  { path: 'support/technical', component: TechnicalSupportComponent , canActivate: [AuthGuard]},
+  { path: 'support/emergency-numbers', component: EmergencyNumbersComponent , canActivate: [AuthGuard]},
 
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
