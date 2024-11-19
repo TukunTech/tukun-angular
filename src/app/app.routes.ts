@@ -10,13 +10,11 @@ import {IcuPatComponent} from "./tukun-tech/components/icu-pat/icu-pat.component
 import {LoginComponent} from "./tukun-tech/components/login/login.component";
 import {CreateAccountComponent} from "./tukun-tech/components/create-account/create-account.component";
 import {AppointmentsComponent} from "./tukun-tech/components/appointments/appointments.component";
-import {
-  ResheduleAppointmentsComponent
-} from "./tukun-tech/components/reshedule-appointments/reshedule-appointments.component";
+import {ResheduleAppointmentsComponent} from "./tukun-tech/components/reshedule-appointments/reshedule-appointments.component";
 import {
   ScheduleAppointmentsComponent
 } from "./tukun-tech/components/schedule-appointments/schedule-appointments.component";
-import {EmergencyNumbersComponent} from "./tukun-tech/components/emergency-numbers/emergency-numbers.component";
+
 import {HomeElderComponent} from "./tukun-tech/components/home-elder/home-elder.component";
 import {ElderProfileComponent} from "./tukun-tech/components/elder-profile/elder-profile.component";
 import {ElderRemindersComponent} from "./tukun-tech/components/elder-reminders/elder-reminders.component";
@@ -26,7 +24,7 @@ import {LoginElderComponent} from "./tukun-tech/components/login-elder/login-eld
 import {ElderVitalSignsComponent} from "./tukun-tech/components/elder-vital-signs/elder-vital-signs.component";
 import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
 import {AuthGuard} from "./tukun-tech/services/authentication/auth.guard";
-import {ClinicalHistoryComponent} from "./tukun-tech/components/clinical-history/clinical-history.component";
+import {EmergencyNumbersComponent} from "./tukun-tech/components/emergency-numbers/emergency-numbers.component";
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
@@ -57,7 +55,7 @@ export const appRoutes: Routes = [
 
   { path: 'support/technical', component: TechnicalSupportComponent , canActivate: [AuthGuard]},
   { path: 'support/emergency-numbers', component: EmergencyNumbersComponent , canActivate: [AuthGuard]},
-  { path: 'history/:id', component: ClinicalHistoryComponent },
+
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
