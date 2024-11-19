@@ -7,7 +7,7 @@ import {Doctor} from "../../model/doctors/doctor.entity";
   providedIn: 'root'
 })
 export class CriticalAlertsService {
-  baseUrl = 'http://localhost:8080/criticalAlert/v1';
+  baseUrl = 'http://localhost:8080/api/v1/criticalAlert';
 
   constructor(private http: HttpClient) { }
   getCriticalAlerts(): Observable<any>{
