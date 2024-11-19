@@ -39,7 +39,7 @@
                 <td > {{x.gender!.gender}} </td>
                 <td > <button type="button" (click)="buscar(x)" style="width: 125px" class="btn btn-warning btn-sm"  data-bs-toggle="modal" data-bs-target="#idModalActualizar"> Edit </button></td>
                 <td > <button type="button" (click)="eliminar(x)" style="width: 125px; background-color: #f10940" class="btn btn-warning btn-sm"> Delete </button></td>
-
+                <button mat-button class="btn" [routerLink]="['/history', patient.id]"> View History </button>
               </tr>
 
 
