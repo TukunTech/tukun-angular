@@ -15,7 +15,7 @@
       <div class="medication-info">
         {{medication.medicineName}} <span>Take at {{medication.timeToTake}}</span>
       </div>
-      <button mat-raised-button color="primary">Ready</button>
+      <button mat-raised-button color="primary" (click)="deletePendingMedicines(medication)">Ready</button>
     </div>
   </mat-card>
 
