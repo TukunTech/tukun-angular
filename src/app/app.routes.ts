@@ -26,6 +26,7 @@ import {LoginElderComponent} from "./tukun-tech/components/login-elder/login-eld
 import {ElderVitalSignsComponent} from "./tukun-tech/components/elder-vital-signs/elder-vital-signs.component";
 import {UpdateAppointmentsComponent} from "./tukun-tech/components/update-appointments/update-appointments.component";
 import {AuthGuard} from "./tukun-tech/services/authentication/auth.guard";
+import {ClinicalHistoryComponent} from "./tukun-tech/components/clinical-history/clinical-history.component";
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
@@ -56,7 +57,7 @@ export const appRoutes: Routes = [
 
   { path: 'support/technical', component: TechnicalSupportComponent , canActivate: [AuthGuard]},
   { path: 'support/emergency-numbers', component: EmergencyNumbersComponent , canActivate: [AuthGuard]},
-
+  { path: 'history/:id', component: ClinicalHistoryComponent },
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
