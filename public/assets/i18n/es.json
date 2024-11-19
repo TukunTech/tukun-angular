@@ -32,7 +32,10 @@
     "allergies": "Alergias",
     "buttonReturn" : "Volver",
     "buttonSave": "Guardar",
-    "update": "Actualizar"
+    "update": "Actualizar",
+    "close": "Cerrar",
+    "delete": "Eliminar",
+    "edit": "Editar"
   },
   "patients": {
     "title": "Pacientes",
@@ -213,7 +216,36 @@
     "medicalInsurance": "Seguro Médico",
     "allergy": "Alergias",
     "buttonSave": "Guardar"
+  },
+
+  "doctors" :{
+    "title": "Doctores",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "DNI": "DNI",
+    "age": "Edad",
+    "specialization": "Especializacion",
+    "codeCMP": "Codigo CMP",
+    "contact": "Contacto",
+    "nationality": "Nacionalidad"
+  },
+
+  "registration": {
+    "title": "Registrar",
+    "doctor": "Doctor",
+    "patient": "Paciente"
+  },
+
+  "doctors-registration" :{
+    "title": "Registro de Doctores",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "DNI": "DNI",
+    "age": "Edad",
+    "specialization": "Especializacion",
+    "codeCMP": "Codigo CMP",
+    "contact": "Contacto",
+    "nationality": "Nacionalidad",
+    "save" : "Guardar"
   }
-
-
 }
