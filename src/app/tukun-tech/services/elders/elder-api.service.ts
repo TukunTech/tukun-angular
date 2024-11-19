@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Elder} from "../../../../../../../tukun-angular/src/app/tukun-tech/model/elders/elder.entity";
+
 import {Observable} from "rxjs";
-import {Patient} from "../../../../../../../tukun-angular/src/app/tukun-tech/model/patients/patient.entity";
+import {Elder} from "../../model/elders/elder.entity";
 @Injectable({
   providedIn: 'root'
 })
