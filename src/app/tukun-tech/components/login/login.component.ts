@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButton} from "@angular/material/button";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
+import {AuthEntity} from "../../model/authentication/auth.entity";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-login',
@@ -16,28 +19,31 @@ import {TranslateModule} from "@ngx-translate/core";
     MatInput,
     RouterLink,
     MatLabel,
-    TranslateModule
+    TranslateModule,
+    FormsModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  credentials = {
+    username: '',
+    password: '',
+  };
 
-  // No se emplean validaciones aun
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      email: [''],
-      password: ['']
+  constructor(private authService: AuthenticationService, private router: Router) {}
+
+  onSubmit(): void {
+    this.authService.login(this.credentials).subscribe({
+      next: (response) => {
+        this.authService.saveToken(response.token); // Guarda el token
+        this.router.navigate(['/home']); // Redirige a la página deseada
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+        alert('Invalid username or password');
+      },
     });
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const email = this.loginForm.get('email')?.value;
-      const password = this.loginForm.get('password')?.value;
-      console.log('Login with:', email, password);
-    }
   }
 
 }
