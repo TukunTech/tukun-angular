@@ -1,29 +1,21 @@
-import { Elder } from "./elder.entity";
+import {Elder} from "./elder.entity";
 
 export class ElderBed {
   id: number;
-  hrBpm: number;
-  systolic: number;
-  dia: number;
-  spo2: number;
-  temperature: number;
+  hr: number;
+  nipb: string;
+  sp02: number;
+  temp: number;
   elder: Elder;
 
-  constructor(
-    id: number,
-    hrBpm: number,
-    systolic: number,
-    dia: number,
-    spo2: number,
-    temperature: number,
-    elder: Elder
-  ) {
+
+  constructor(id: number, hr: number, nipb: string, sp02: number, temp: number, elder: Elder) {
     this.id = id;
-    this.hrBpm = hrBpm;
-    this.systolic = systolic;
-    this.dia = dia;
-    this.spo2 = spo2;
-    this.temperature = temperature;
+    this.hr = hr;
+    this.nipb = nipb;
+    this.sp02 = sp02;
+    this.temp = temp;
     this.elder = elder;
   }
+
 }
