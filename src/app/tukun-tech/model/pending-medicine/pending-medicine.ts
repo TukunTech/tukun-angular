@@ -1,18 +1,18 @@
 import {Status} from "./status";
+import {Elder} from "../elders/elder.entity";
 
-class Elder {
-}
 
 export class PendingMedicine {
   id?: number;
   medicineName?: string;
-  status?: Status;
+  status?: Status | null;
   dosage?: string;
-  timeToTake?: Date;
-  elder?: Elder;
+  timeToTake?: Date | null;
+  elder?: Elder | null;
+
+
 
   constructor(id: number, medicineName: string, status: Status, dosage: string, timeToTake: Date, elder: Elder) {
-
     this.id = id;
     this.medicineName = medicineName;
     this.status = status;

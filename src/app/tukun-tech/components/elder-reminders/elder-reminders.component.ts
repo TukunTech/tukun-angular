@@ -7,6 +7,9 @@ import {RouterLink} from "@angular/router";
 import {PendingMedicine} from "../../model/pending-medicine/pending-medicine";
 import {PendingMedicineService} from "../../services/pending-medicine/pending-medicine.service";
 import Swal from "sweetalert2";
+import {FormsModule} from "@angular/forms";
+import {MatInput} from "@angular/material/input";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 @Component({
@@ -17,7 +20,10 @@ import Swal from "sweetalert2";
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    RouterLink
+    RouterLink,
+    FormsModule,
+    MatInput,
+    TranslateModule
   ],
   templateUrl: './elder-reminders.component.html',
   styleUrl: './elder-reminders.component.css'
@@ -26,7 +32,18 @@ export class ElderRemindersComponent implements OnInit {
  pendingMedicines: PendingMedicine[] = [];
 
 
-  constructor(private pendingMedicineService: PendingMedicineService) {}
+ pendingMedicine: PendingMedicine = {
+     id: 0,
+     medicineName: "",
+     status: null,
+     dosage: "",
+     timeToTake: null,
+     elder: null,
+   }
+
+
+
+   constructor(private pendingMedicineService: PendingMedicineService) {}
 
   ngOnInit(): void{
   this.getPendingMedicines();
@@ -36,6 +53,26 @@ export class ElderRemindersComponent implements OnInit {
     this.pendingMedicineService.getMedicine().subscribe(
       el => this.pendingMedicines = el
     )
+  }
+
+
+
+  postPendingMedicine(){
+    this.pendingMedicineService.postMedicine(this.pendingMedicine).subscribe(res=>{
+      document.getElementById("btn_reg_cerrar")?.click();
+      Swal.fire('Mensaje', res.mensaje, 'success');
+    }) ;
+
+    this.pendingMedicine = {
+      id: 0,
+      medicineName: "",
+      status: null,
+      dosage: "",
+      timeToTake: null,
+      elder: null,
+      }
+
+
   }
 
   deletePendingMedicines(obj: PendingMedicine){
