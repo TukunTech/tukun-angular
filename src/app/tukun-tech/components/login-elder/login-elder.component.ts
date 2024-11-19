@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {MatButton} from "@angular/material/button";
-import {MatFormField, MatLabel} from "@angular/material/form-field";
-import {MatInput} from "@angular/material/input";
-import {RouterLink} from "@angular/router";
-import {TranslateModule} from "@ngx-translate/core";
-
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { MatButton } from "@angular/material/button";
+import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatInput } from "@angular/material/input";
+import { Router, RouterLink } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
+import { AuthenticationService } from "../../services/authentication/authentication.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-login-elder',
@@ -17,27 +18,30 @@ import {TranslateModule} from "@ngx-translate/core";
     MatInput,
     RouterLink,
     MatLabel,
-    TranslateModule
+    TranslateModule,
+    FormsModule
   ],
   templateUrl: './login-elder.component.html',
   styleUrl: './login-elder.component.css'
 })
 export class LoginElderComponent {
-  loginElderForm: FormGroup;
+  credentials = {
+    username: '',
+    password: '',
+  };
 
-  // No se emplean validaciones aun
-  constructor(private fb: FormBuilder) {
-    this.loginElderForm = this.fb.group({
-      email: [''],
-      password: ['']
+  constructor(private authService: AuthenticationService, private router: Router) {}
+
+  onSubmit(): void {
+    this.authService.login(this.credentials).subscribe({
+      next: (response) => {
+        this.authService.saveToken(response.token); // Guarda el token
+        this.router.navigate(['/elder/home']); // Redirige a la página de inicio del Elder
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+        Swal.fire('Error', 'Invalid username or password', 'error');
+      },
     });
-  }
-
-  onSubmit() {
-    if (this.loginElderForm.valid) {
-      const email = this.loginElderForm.get('email')?.value;
-      const password = this.loginElderForm.get('password')?.value;
-      console.log('Login with:', email, password);
-    }
   }
 }
