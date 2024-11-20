@@ -7,7 +7,7 @@ import {EmergencyNumbers} from "../../model/emergency-numbers/emergency-numbers"
   providedIn: 'root'
 })
 export class EmergencyNumbersApiService {
-  baseUrl = 'http://localhost:8080/api/v1/emergencyNumbers';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/emergencyNumbers';
 
   constructor(private http: HttpClient) {}
 

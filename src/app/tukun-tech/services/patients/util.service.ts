@@ -14,7 +14,7 @@ import {Medicalinsurance} from "../../model/elders/medicalinsurance";
   providedIn: 'root'
 })
 export class UtilService {
-  baseUrl = 'http://localhost:8080/api/v1/util';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/util';
 
   constructor(private http: HttpClient) { }
 

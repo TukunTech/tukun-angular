@@ -9,7 +9,7 @@ import {Patient} from "../../model/patients/patient.entity";
   providedIn: 'root'
 })
 export class PendingMedicineService {
-  baseUrl = 'http://localhost:8080/api/v1/pendingMedicine';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/pendingMedicine';
 
   constructor(private http: HttpClient) { }
 

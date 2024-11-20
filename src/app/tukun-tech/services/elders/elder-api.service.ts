@@ -7,7 +7,7 @@ import {Elder} from "../../model/elders/elder.entity";
   providedIn: 'root'
 })
 export class ElderApiService {
-  baseUrl='http://localhost:8080/api/v1/elders';
+  baseUrl='https://tukun-tech-platform.onrender.com/api/v1/elders';
   constructor(private http:HttpClient) { }
   getElder(): Observable<any>{
     return this.http.get(this.baseUrl+'/elders')

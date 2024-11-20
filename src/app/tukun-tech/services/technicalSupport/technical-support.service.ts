@@ -7,7 +7,7 @@ import {TechnicalSupport} from "../../model/technicalSupport/technical-support";
   providedIn: 'root'
 })
 export class TechnicalSupportService {
-  baseUrl = 'http://localhost:8080/api/v1/soporte';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/soporte';
 
   constructor(private http: HttpClient) {}
 

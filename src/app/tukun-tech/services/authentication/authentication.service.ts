@@ -8,7 +8,7 @@ import {AuthResponse} from "../../model/authentication/auth-reponse.model";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  baseUrl = 'http://localhost:8080/api/v1/auth';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/auth';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import {ElderBed} from "../../model/elders/elderbed";
   providedIn: 'root'
 })
 export class ElderBedService {
-  private baseUrl = 'http://localhost:8080/api/v1/elder-bed'; // URL del endpoint del backend
+  private baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/elder-bed'; // URL del endpoint del backend
 
   constructor(private http: HttpClient) { }
 

@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class BedService {
-  baseUrl = 'http://localhost:8080/api/v1/bed';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/bed';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class PatientApiService {
-  baseUrl = 'http://localhost:8080/api/v1/patients';
+  baseUrl = 'https://tukun-tech-platform.onrender.com/api/v1/patients';
 
   constructor(private http: HttpClient) { }
 
